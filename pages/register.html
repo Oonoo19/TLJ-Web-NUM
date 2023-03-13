@@ -8,64 +8,24 @@
         <link rel="stylesheet" href="../style.css">
     </head>
     <body>
-        <header>
-            <a href="../index.html">
-                <img src="../images/tlj_logo.webp" alt="Tous les Jours logo" class="logo">
-            </a>
-            <ul class="menu">
-                <li>
-                    <a href="introduction.html">Танилцуулга</a>
-                </li>
-                <li>
-                    <a href="product.html">Бүтээгдэхүүн</a>
-                </li>
-            </ul>
-            <ul class="round-menu">
-                <li><a href="#" aria-label="Search for products"><img src="" alt="" class="round-menu"></a></li>
-                <li><a href="favorites.html" aria-label="See your favorite products"><img src="" alt="" class="round-menu"></a></li>
-                <li><a href="cart.html" aria-label="See products from cart"><img src="" alt="" class="round-menu"></a></li>
-                <li><a href="login.html" aria-label="Login page"><img src="" alt="" class="round-menu"></a></li>
-            </ul>
-        </header>
-        <footer>
-            <div class="footer-column1">
-                <ul class="social-media">
-                    <li><img src="" alt=""></li>
-                    <li><img src="" alt=""></li>
-                    <li><img src="" alt=""></li>
-                </ul> 
-                <ul class="address">
-                    <li>
-                        <img src="" alt="" class="address-logo">
-                        <p class="address"></p>
-                    </li>
-                    <li>
-                        <img src="" alt="" class="address-logo">
-                        <p class="address"></p>
-                    </li>
-                    <li>
-                        <img src="" alt="" class="address-logo">
-                        <p class="address"></p>
-                    </li>
-                </ul>
+        <main-header></main-header>
+        <section>
+            <img src="" alt="">
+            <div class="register-box">
+                <h1>Бүртгүүлэх</h1>
+                <form action="">
+                    <input type="text" placeholder="Нэр" name="Lname" id="Lname" required>
+                    <input type="text" placeholder="Овог" name="Fname" id="Fname" required>
+                    <input type="text" placeholder="И-мэйл" name="email" id="email" required>
+                    <input type="tel" placeholder="Утас" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                    <input type="password" placeholder="Нууц үг" name="psw" id="psw" required>
+                    <input type="password" placeholder="Нууц үг давтах" name="psw-repeat" id="psw-repeat" required>
+                </form>
+                <button type="submit" class="registerbtn">Бүртгүүлэх</button>
+                <p>Та Бүртгүүлэх товчийг дарснаар манай үйлчилгээний нөхцөлийг хүлээн зөвшөөрсөнд тооцно.</p>
             </div>
-            <div class="footer-column2">
-                <ul class="sitemap">
-                    <li><a href="introduction.html" aria-label="See our bakery's introduction">Танилцуулга</a></li>
-                    <li><a href="product.html" aria-label="See all the products">Бүтээгдэхүүн</a></li>
-                    <li><a href="cart.html" aria-label="See products from cart">Сагс</a></li>
-                    <li><a href="profile.html" aria-label="See your profile">Хэрэглэгчийн нүүр хуудас</a></li>
-                    <li><a href="news.html" aria-label="News page">Мэдээ</a></li>
-                </ul>
-            </div>
-            <div class="footer-column3">
-                <ul class="additional-menu">
-                    <li><a href="qa.html" aria-label="Common questions and answers">Түгээмэл асуулт хариулт</a></li>
-                    <li><a href="feedback.html" aria-label="Give your feedback">Санал хүсэлт</a></li>
-                    <li><a href="humanres.html" aria-label="Send your cv, check out our human resource">Хүний нөөц</a></li>
-                    <li><a href="branches.html" aria-label="All of our branches' information">Салбарын мэдээлэл</a></li>
-                </ul>
-            </div>
-        </footer>
+        </section>
+        <main-footer></main-footer>
     </body>
+    <script src="../index.js"></script>
 </html>
