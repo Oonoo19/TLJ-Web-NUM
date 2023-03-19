@@ -9,6 +9,50 @@
     </head>
     <body>
         <main-header></main-header>
+        <section>
+            <H4>Таны сагс</H4>
+            <button type="button">Сагс хоослох</button>
+        </section>
+        <section>
+            <article>
+                <h4>Whole corn bread</h4>
+                <hr>
+                <form action="add-to-cart.php" method="post">
+                    <label for="product-quantity">Тоо хэмжээ:</label>
+                    <input type="number" id="product-quantity" name="product-quantity" min="1" max="10" value="1">
+                    <label for="product-price">Үнэ: 3700</label>
+                </form>
+            </article>
+            <article>
+                <h4>Red bean bun bread</h4>
+                <hr>
+                <form action="add-to-cart.php" method="post">
+                    <label for="product-quantity">Тоо хэмжээ:</label>
+                    <input type="number" id="product-quantity" name="product-quantity" min="1" max="10" value="1">
+                    <label for="product-price">Үнэ: 3700</label>
+                </form>
+            </article>
+        </section>
+        <section>
+            <h4>Төлбөрийн мэдээлэл</h4>
+        </section>
+        <section>
+            <h5>Бүтээгдэхүүн</h5>
+            <div>
+                <p>whole corn bread</p>
+                <p id="quantity-display">x1</p>
+                <span class="product-price">3700</span>
+            </div>
+            <div>
+                <p>Read bean bun bread</p>
+                <p id="quantity-display">x1</p>
+                <span class="product-price">3700</span>
+            </div>
+            <div><p>7400</p></div>
+        </section>
+        <section>
+            <button type="button">Худалдан авах</button>
+        </section>
         <main-footer></main-footer>
     </body>
     <script src="../index.js"></script>
