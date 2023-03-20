@@ -21,6 +21,8 @@ body{
     background-color: var(--light-beige);
     font-family: var(--default-font);
     margin: 0;
+    position: relative;
+    min-height: 100vh;
 }
 
 header{
@@ -74,6 +76,8 @@ footer{
     padding-top: 25px;
     display: flex;
     justify-content: center;
+    position: absolute;
+    bottom: 0;
 }
 .footer-container{
     width: 70%;
