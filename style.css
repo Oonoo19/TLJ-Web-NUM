@@ -14,23 +14,44 @@ body{
 }
 
 header{
-    display: flex;
     background-color: var(--chocolate-brown);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 footer{
     background-color: var(--dark);
 }
 
-ul{
-    list-style: none;
-    display: flex;
-}
-
 .menu{
-    justify-content: space-around;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.menu a{
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
-.menu li{
+.round-menu{
+    display: flex;
     justify-content: space-between;
+    text-align: center;
+}
+.round-menu a{
+    padding-left: 8px;
+    width: 25px;
+    color: white;
+}
+
+.menu a{
+    image-resolution: from-image;
+    text-decoration: none;
+    color: white;
+
 }
