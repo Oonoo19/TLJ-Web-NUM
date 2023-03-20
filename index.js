@@ -25,7 +25,7 @@ class Header extends HTMLElement {
         
         </svg>
         </a>
-        <a href="avorites.html" aria-label="See your favorite products">
+        <a href="favorites.html" aria-label="See your favorite products">
         <img alt="heart-svgrepo-com" width="25" height="25" src="data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KDTwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIFRyYW5zZm9ybWVkIGJ5OiBTVkcgUmVwbyBNaXhlciBUb29scyAtLT4KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9Ii0xOS4yIC0xOS4yIDIzMC40MCAyMzAuNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgZmlsbD0ibm9uZSI+Cg08ZyBpZD0iU1ZHUmVwb19iZ0NhcnJpZXIiIHN0cm9rZS13aWR0aD0iMCI+Cg08cmVjdCB4PSItMTkuMiIgeT0iLTE5LjIiIHdpZHRoPSIyMzAuNDAiIGhlaWdodD0iMjMwLjQwIiByeD0iMTE1LjIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZXdpZHRoPSIwIi8+Cg08L2c+Cg08ZyBpZD0iU1ZHUmVwb190cmFjZXJDYXJyaWVyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KDTxnIGlkPSJTVkdSZXBvX2ljb25DYXJyaWVyIj4KDTxwYXRoIGQ9Ik02MC43MzIgMjkuN0M0MS4xMDcgMjkuNyAyMiAzOS43IDIyIDY3LjQxYzAgMjcuMjkgNDUuMjc0IDY3LjI5IDc0IDk0Ljg5IDI4Ljc0NC0yNy42IDc0LTY3LjYgNzQtOTQuODkgMC0yNy43MS0xOS4wOTItMzcuNzEtMzguNjk1LTM3LjcxQzExNiAyOS43IDEwNC4zMjUgNDEuNTc1IDk2IDU0LjA2NiA4Ny42MzggNDEuNTE2IDc2IDI5LjcgNjAuNzMyIDI5Ljd6IiBzdHlsZT0iY2xpcC1ydWxlOmV2ZW5vZGQ7ZGlzcGxheTppbmxpbmU7ZmlsbDpub25lO3N0cm9rZTojN0E0RDRBO3N0cm9rZS13aWR0aDoxMjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MjtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIvPgoNPC9nPgoNPC9zdmc+">
         </a>
         <a href="cart.html" aria-label="See products from cart">
