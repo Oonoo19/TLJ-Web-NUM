@@ -7,10 +7,20 @@
     --dark: #2E2F2E;
 
     --default-border: 0.5px;
+
+    --default-font:'Mulish', sans-serif;
+    --semi-bold: 600;
+    --normal: 500;
+    --light: 300;
+    --bold:700;
+
+    --desktop-padding-side:240px;
 }
 
 body{
     background-color: var(--light-beige);
+    font-family: var(--default-font);
+    margin: 0;
 }
 
 header{
@@ -22,10 +32,7 @@ header{
     padding-right: 40px;
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
-footer{
-    background-color: var(--dark);
+    margin: 0;
 }
 
 .menu{
@@ -53,5 +60,61 @@ footer{
     image-resolution: from-image;
     text-decoration: none;
     color: white;
+}
 
+.header-js{
+    margin: 0;
+    padding: 0;
+}
+
+/*footer style*/
+footer{
+    background-color: var(--dark);
+    width: 100%;
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+.footer-container{
+    width: 70%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.footer-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 33%;
+}
+
+ul.address{
+    padding: 0;
+}
+
+.footer-column ul{
+    list-style-type: none;
+}
+
+.address li{
+    display: flex;
+    align-items: center;
+}
+
+.address p{
+    padding-left: 10px;
+}
+
+.footer-column a, .address p{
+    color: white;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 13px;
+}
+
+.social-media a{
+    padding-right: 5px;
 }
