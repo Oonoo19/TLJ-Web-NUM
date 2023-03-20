@@ -9,6 +9,20 @@
     </head>
     <body>
         <main-header></main-header>
+        <section>
+            <div class="feedback-box">
+                <h2>Санал хүсэлт</h2>
+                <form action="" method="get">
+                    <label for="email">И-мэйл хаяг</label>
+                    <input type="text" placeholder="И-мэйл" name="email" id="email" required>
+                    <label for="phone">Холбогдох утасны дугаар</label>
+                    <input type="tel" placeholder="Утас" id="phone" name="phone" pattern="[0-9]{8}">
+                    <label for="feedback-msg">Санал хүсэлтээ бичнэ үү</label>
+                    <input type="feedback" placeholder="Санал хүсэлт" name="feedback-msg" id="feedback-msg" required>
+                    <input type="submit" value="Илгээх">
+                </form>
+            </div>
+        </section>
         <main-footer></main-footer>
     </body>
     <script src="../index.js"></script>
