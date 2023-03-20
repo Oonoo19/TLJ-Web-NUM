@@ -6,24 +6,70 @@
         <meta name="description" content="Tous les Jours bakery products, order product, cake, bread">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
+        <style>
+            p{
+                font-size: 10px;
+            }
+            .Container{
+                margin:50px auto;
+                width: 50%;
+                display: flex;
+                flex-direction: row;
+            }
+            .left-container{
+                width: 50%;
+                background: #7A4D4A;
+                border:0.5px solid #000000;
+            }
+            .right-container{
+                width: 50%;
+                background: #ffffff;
+            }
+            .register-box{
+                max-width: 250px;
+                min-height: 370px;
+                text-align: center;
+                margin:20px 60px;
+            }
+            input[type=text],input[type=tel],input[type=password],input[type=submit]{
+                padding: 5px 25px;
+                margin: 8px 0px;
+                display: block;
+                border: 1px solid #2E2F2E;
+                box-sizing: border-box;
+            }
+            .btn{
+                padding: 5px 70px;
+                margin: 8px 0px;
+            }
+        </style>
     </head>
     <body>
         <main-header></main-header>
-        <section>
-            <img src="" alt="">
-            <div class="register-box">
-                <h1>Бүртгүүлэх</h1>
-                <form action="">
-                    <input type="text" placeholder="Нэр" name="Lname" id="Lname" required>
-                    <input type="text" placeholder="Овог" name="Fname" id="Fname" required>
-                    <input type="text" placeholder="И-мэйл" name="email" id="email" required>
-                    <input type="tel" placeholder="Утас" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
-                    <input type="password" placeholder="Нууц үг" name="psw" id="psw" required>
-                    <input type="password" placeholder="Нууц үг давтах" name="psw-repeat" id="psw-repeat" required>
-                </form>
-                <button type="submit" class="registerbtn">Бүртгүүлэх</button>
-                <p>Та Бүртгүүлэх товчийг дарснаар манай үйлчилгээний нөхцөлийг хүлээн зөвшөөрсөнд тооцно.</p>
-            </div>
+        <section class="Container">
+            <article class="left-container">
+                <img src="" alt="">
+            </article>
+            <article class="right-container">
+                <div class="register-box">
+                    <div>
+                        <h1>Бүртгүүлэх</h1>
+                    </div>
+                    <div>
+                        <form action="">
+                            <input type="text" placeholder="Нэр" name="Lname" id="Lname" required>
+                            <input type="text" placeholder="Овог" name="Fname" id="Fname" required>
+                            <input type="text" placeholder="И-мэйл" name="email" id="email" required>
+                            <input type="tel" placeholder="Утас" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                            <input type="password" placeholder="Нууц үг" name="psw" id="psw" required>
+                            <input type="password" placeholder="Нууц үг давтах" name="psw-repeat" id="psw-repeat" required>
+                            <button class="btn" type="submit">Бүртгүүлэх</button>
+                        </form>
+                        <p>Та Бүртгүүлэх товчийг дарснаар манай үйлчилгээний нөхцөлийг хүлээн зөвшөөрсөнд тооцно.</p>
+                    </div>
+                    
+                </div>
+            </article>
         </section>
         <main-footer></main-footer>
     </body>
