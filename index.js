@@ -3,7 +3,7 @@ class Header extends HTMLElement {
       this.innerHTML = `
       <header>
       <a href="index.html" class="menu-logo">
-          <img src="../images/tlj_logo.webp" alt="Tous les Jours logo" class="logo" width="200%" height="200%">
+          <img src="../images/tlj_logo.webp" alt="Tous les Jours logo" class="logo" width="100%" height="100%">
       </a>
       <nav class="menu">
         <a href="introduction.html">Танилцуулга</a>
