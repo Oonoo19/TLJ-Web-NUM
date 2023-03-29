@@ -6,11 +6,12 @@
     --color-golden: #D3A45F;
     --color-dark: #2E2F2E;
     --color-default-border: 0.5px;
-    --color-white: #e7e3e3;
+    --color-white: #ffffff;
     --color-gray: #8b6762;
 
     --default-font:'Mulish', sans-serif;
-    --semi-bold: 600;
+    --menu-font-size:14px;
+    --default-semi-bold: 600;
     --normal: 500;
     --light: 300;
     --bold:700;
@@ -33,6 +34,10 @@ header{
     flex-direction: column;
     align-items: center;
     margin: 0;
+    /*make header stick to top of window*/
+    position: fixed;
+    width: 100%;
+
 }
 .header-container-outer{
     width: 100%;
@@ -49,7 +54,7 @@ header{
 }
 .search{
     width: 200px;
-    background-color: var(--color-beige);
+    background-color: var(--color-white);
     border-radius: 20px;
     display: flex;
     justify-content: flex-start;
@@ -57,9 +62,20 @@ header{
 }
 .search input{
     border: none;
-    background-color: var(--color-beige);
-    color: var(--color-light-beige);
+    background-color: var(--color-white);
+    color: var(--color-green);
     width: 100%;
+}
+
+.search ::placeholder{
+    color: var(--color-green);
+    opacity: 0.8;
+}
+
+/*input hover design*/
+.search input:focus{
+    border: none;
+    outline: none;
 }
 
 .menu{
@@ -71,18 +87,21 @@ header{
 
 .round-menu a{
     text-decoration: none;
-    padding-left: 5px;
     color: var(--color-green);
 }
 .round-menu img, .round-menu svg{
+    
     width: 27px;
     height: 27px;
 }
-
 .round-menu img:hover, .round-menu svg:hover{
-    width: 30px;
-        height: 30px;
+    transform: scale(1.2);
 }
+
+/* .round-menu img:hover, .round-menu svg:hover{
+    width: 30px;
+    height: 30px;
+} */
 /*Animation*/
 @keyframes icon{
     from{
@@ -95,11 +114,13 @@ header{
     }
 }
 
+
+
 .submenu a{
     image-resolution: from-image;
     text-decoration: none;
     color: var(--color-green);
-    font-size: 16px;
+    font-size: 14px;
 }
 .submenu{
     margin: auto;
@@ -123,15 +144,15 @@ section{
 footer{
     background-color: var(--color-dark);
     width: 100%;
-    padding-top: 25px;
-    display: flex;
-    justify-content: center;
+    padding: 25px 0px;
 }
 .footer-container{
     width: 70%;
+    margin: auto;
+}
+.footer-column-container{
     display: flex;
     justify-content:space-between;
-    align-items: center;
 }
 .footer-column{
     display: flex;
@@ -158,13 +179,17 @@ ul.address{
     padding-left: 10px;
 }
 
-.footer-column a, .address p{
+.footer-column a, footer p{
     color: var(--color-white);
     text-decoration: none;
     font-style: normal;
-    font-weight: 600;
-    font-size: 10px;
+    font-weight: 500;
+    font-size: 12px;
     line-height: 13px;
+}
+.copy-right{
+    margin: auto;
+    width: 40%;
 }
 
 .social-media a{
