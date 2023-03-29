@@ -6,26 +6,76 @@
         <meta name="description" content="Tous les Jours bakery products, order product, cake, bread, favorites, save and order directly from this page">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
+        <style>
+            section{
+                width: 67%;
+                margin: 150px auto;
+            }
+            .fav-box{
+                display: grid;
+                grid-template-columns: auto auto ;
+                gap: 0px;
+                background-color: #ffffff;
+                padding: 30px;
+                margin: 20px 0;
+            }
+            .right{
+                
+                align-items: center;
+                
+            }
+            .left{
+                display: grid;
+                gap: 10px;
+            }
+            .item1{
+                display: grid;
+                grid-template-columns: auto auto;
+                
+                border-bottom: 1px solid #D3A45F;
+                gap: 10px;
+            }
+            .item2{
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-row: auto 1/4;
+                gap: 20px;
+            }
+            
+        </style>
     </head>
     <body>
         <main-header></main-header>
         <section>
-            <article>
-                <img src="/images/bread1.webp" alt="" height="100" width="100">
-                <div>
-                    <h3>Whole corn bread</h3>
-                    <hr>
-                    <p>Эрдэнэшишээр баялаг крем чийз шанзтай зөөлөн амтлаг талх</p>
-                    <button type="submit" class="order-btn">Захиалах</button>
+            <article class="fav-box">
+                <div class="right">
+                    <img src="/images/bread1.webp" alt="" width="150" height="150">
+                </div>
+                
+                <div class="left">
+                    <div class="item1">
+                        <h3> Whole corn bread</h3>
+                    </div>
+                    <div class="item2">
+                        <p>Эрдэнэшишээр баялаг крем чийз шанзтай зөөлөн амтлаг талх</p>
+                        <button type="submit" class="order-btn">Захиалах</button>
+                    </div>
+                    
                 </div>
             </article>
-            <article>
-                <img src="/images/bread1.webp" alt="" height="100" width="100">
-                <div>
-                    <h3>Read bean bun bread</h3>
-                    <hr>
-                    <p>Улаан буурцгийн бурмаар баяжуулсан чихэрлэг зөөлөн амтат талх</p>
-                    <button type="submit" class="order-btn">Захиалах</button>
+            <article class="fav-box">
+                <div class="right">
+                    <img src="/images/bread1.webp" alt="" width="150" height="150">
+                </div>
+                <div class="left">
+                    <div class="item1">
+                        <h3> Read bean bun bread</h3>
+                    </div>
+                    <div class="item2">
+                        <p>Улаан буурцгийн бурмаар баяжуулсан чихэрлэг зөөлөн амтат талх</p>
+                        <button type="submit" class="order-btn">Захиалах</button>
+                    </div>
+                    
                 </div>
             </article>
         </section>

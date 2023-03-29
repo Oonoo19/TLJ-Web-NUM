@@ -7,12 +7,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
         <style>
-            p{
+            .register-box h3{
+                margin: 0;
+            }
+            .Container p{
                 font-size: 10px;
+                max-width: 220px;
             }
             .Container{
                 margin:50px auto;
-                width: 50%;
+                width: 67%;
                 display: flex;
                 flex-direction: row;
             }
@@ -23,24 +27,31 @@
             }
             .right-container{
                 width: 50%;
+                padding: 30px 0;
                 background: #ffffff;
             }
             .register-box{
-                max-width: 250px;
-                min-height: 370px;
-                text-align: center;
-                margin:20px 60px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
             }
-            input[type=text],input[type=tel],input[type=password],input[type=submit]{
+            .register-box input[type=text],input[type=tel],input[type=password],input[type=submit]{
                 padding: 5px 25px;
-                margin: 8px 0px;
+                margin: 15px 0px;
                 display: block;
                 border: 1px solid #2E2F2E;
                 box-sizing: border-box;
+                
             }
             .btn{
+                cursor: pointer;
                 padding: 5px 70px;
-                margin: 8px 0px;
+                transition: background-color  0.5s ease-out,color  0.5s ease-out;
+            }
+            .btn:hover{
+                background-color:#7A4D4A ;
+                color: white;
             }
         </style>
     </head>
@@ -52,10 +63,7 @@
             </article>
             <article class="right-container">
                 <div class="register-box">
-                    <div>
-                        <h1>Бүртгүүлэх</h1>
-                    </div>
-                    <div>
+                        <h3>Бүртгүүлэх</h3>
                         <form action="">
                             <input type="text" placeholder="Нэр" name="Lname" id="Lname" required>
                             <input type="text" placeholder="Овог" name="Fname" id="Fname" required>
@@ -66,12 +74,9 @@
                             <button class="btn" type="submit">Бүртгүүлэх</button>
                         </form>
                         <p>Та Бүртгүүлэх товчийг дарснаар манай үйлчилгээний нөхцөлийг хүлээн зөвшөөрсөнд тооцно.</p>
-                    </div>
-                    
                 </div>
             </article>
         </section>
-        <main-footer></main-footer>
     </body>
     <script src="../index.js"></script>
 </html>
