@@ -17,7 +17,7 @@ class Header extends HTMLElement {
         <input type="text" placeholder="Search..">
         </div>
       <a href="index.html" class="menu-logo">
-          <img src="../images/tlj_logo 2.webp" alt="Tous les Jours logo" class="logo" width="95%" height="95%">
+          <img src="../images/tlj_logo 2.webp" alt="Tous les Jours logo" class="logo" width="100%" height="100%">
       </a>
       <nav class="round-menu">
         
@@ -68,6 +68,7 @@ class Header extends HTMLElement {
         `
         <footer>
         <div class="footer-container">
+        <div class="footer-column-container">
         <div class="footer-column">
             <nav class="social-media">
                 <a href="#" aria-label="Search for products">
@@ -156,6 +157,9 @@ class Header extends HTMLElement {
                 <li><a href="branches.html" aria-label="All of our branches' information">Салбарын мэдээлэл</a></li>
             </ul>
         </div>
+        </div>
+        <p class="copy-right">©2023 - Артизан ХХК. БҮХ ЭРХ ХУУЛИАР ХАМГААЛАГДСАН</p>
+        <p class="copy-right">Вэб сайтыг: МУИС</p>
         </div>
     </footer>
         `
