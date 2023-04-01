@@ -12,36 +12,64 @@
                 margin: 150px auto;
             }
             .fav-box{
-                display: grid;
-                grid-template-columns: auto auto ;
-                gap: 0px;
+                /*grid-template-columns: repeat(auto-fit,minmax(200px,1fr)) */
+                display: flex;
+                flex-direction: row;
+                align-items: center;
                 background-color: #ffffff;
-                padding: 30px;
+                padding:10px 30px;
                 margin: 20px 0;
             }
-            .right{
-                
-                align-items: center;
-                
-            }
             .left{
-                display: grid;
-                gap: 10px;
+                flex: 2;
+                flex-direction: column;
+            }
+            .item1, .item2{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
             }
             .item1{
-                display: grid;
-                grid-template-columns: auto auto;
-                
-                border-bottom: 1px solid #D3A45F;
-                gap: 10px;
+                padding: 10px 0;
+                border-bottom: 1px solid #CCBEA6;
             }
             .item2{
-                display: grid;
-                grid-template-columns: auto auto;
-                grid-row: auto 1/4;
-                gap: 20px;
+                padding: 5px 0;
             }
-            
+            .right{
+                flex: 0.5;
+            }
+            .minus{
+                border: 1px solid #CCBEA6;
+                border-radius: 25%;
+                padding: 0px 6px ;
+                margin: 0px;
+                cursor: pointer;
+                color: #CCBEA6;
+                transition: background-color  0.5s ease-in,color  0.5s ease-in;
+            }
+            .minus:hover{
+                border:1px solid #7A4D4A;
+                color: black;
+            }
+            .item1 h3{
+                margin: 0;
+                
+            }
+            .order-btn{
+                width: 100px;
+                height: 30px;
+                cursor: pointer;
+                transition: background-color  0.5s ease-out,color  0.5s ease-out;
+            }
+            .order-btn:hover{
+                background-color:#7A4D4A ;
+                color: white;
+            }
+            p {
+                flex: 1;
+            }
         </style>
     </head>
     <body>
@@ -49,12 +77,13 @@
         <section>
             <article class="fav-box">
                 <div class="right">
-                    <img src="/images/bread1.webp" alt="" width="150" height="150">
+                    <img src="/images/1.png" alt="" width="150" height="150">
                 </div>
                 
                 <div class="left">
                     <div class="item1">
                         <h3> Whole corn bread</h3>
+                        <div class="minus">&minus;</div>
                     </div>
                     <div class="item2">
                         <p>Эрдэнэшишээр баялаг крем чийз шанзтай зөөлөн амтлаг талх</p>
@@ -70,6 +99,7 @@
                 <div class="left">
                     <div class="item1">
                         <h3> Read bean bun bread</h3>
+                        <div class="minus">&minus;</div>
                     </div>
                     <div class="item2">
                         <p>Улаан буурцгийн бурмаар баяжуулсан чихэрлэг зөөлөн амтат талх</p>
