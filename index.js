@@ -169,3 +169,20 @@ class Header extends HTMLElement {
   
   customElements.define('main-header', Header);
   customElements.define('main-footer', Footer);
+
+  $(function(){
+    //the shrinkHeader variable is where you tell the scroll effect to start.
+    var shrinkHeader = 20;
+     $(window).scroll(function() {
+       var scroll = getCurrentScroll();
+         if ( scroll >= shrinkHeader ) {
+              $('.header-container').addClass('smaller');
+           }
+           else {
+               $('.header-container').removeClass('smaller');
+           }
+     });
+   function getCurrentScroll() {
+       return window.pageYOffset || document.documentElement.scrollTop;
+       }
+   });

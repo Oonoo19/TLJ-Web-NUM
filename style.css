@@ -34,10 +34,12 @@ header{
     flex-direction: column;
     align-items: center;
     margin: 0;
-    /*make header stick to top of window*/
-    position: fixed;
     width: 100%;
+    position: fixed;
+    transition: height 0.3s;
 
+  z-index: 1000;
+  overflow: hidden;
 }
 .header-container-outer{
     width: 100%;
@@ -51,6 +53,10 @@ header{
     text-align: center;
     padding: 20px;
     align-items: center;
+    transition: padding 0.3s;
+}
+.smaller{
+    padding: 10px;
 }
 .search{
     width: 200px;
@@ -98,10 +104,6 @@ header{
     transform: scale(1.2);
 }
 
-/* .round-menu img:hover, .round-menu svg:hover{
-    width: 30px;
-    height: 30px;
-} */
 /*Animation*/
 @keyframes icon{
     from{
@@ -115,7 +117,7 @@ header{
 }
 
 
-
+/*submenu style*/
 .submenu a{
     image-resolution: from-image;
     text-decoration: none;
