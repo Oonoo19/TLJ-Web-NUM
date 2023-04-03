@@ -7,11 +7,13 @@
     --color-dark: #2E2F2E;
     --color-default-border: 0.5px;
     --color-white: #ffffff;
-    --color-gray: #8b6762;
+    --color-gray: #7f827f;
 
     --default-font:'Mulish', sans-serif;
     --menu-font-size:14px;
+    --default-font-size: 13px;
     --default-semi-bold: 600;
+    --default-button-font-size: 16px;
     --normal: 500;
     --light: 300;
     --bold:700;
@@ -27,6 +29,9 @@ body{
     display: flex;
     flex-direction: column;
 }
+.body-main-section{
+    margin-top: 120px;
+}
 
 header{
     background-color: var(--color-light-beige);
@@ -36,14 +41,14 @@ header{
     margin: 0;
     width: 100%;
     position: fixed;
+    top: 0;
     transition: height 0.3s;
-
-  z-index: 1000;
-  overflow: hidden;
+    z-index: 1000;
+    overflow: hidden;
 }
 .header-container-outer{
     width: 100%;
-    border-bottom: var(--color-green) solid 0.5px;
+    border-bottom: var(--color-green) solid 1px;
 }
 .header-container{
     margin: auto;
@@ -56,7 +61,7 @@ header{
     transition: padding 0.3s;
 }
 .smaller{
-    padding: 10px;
+    padding: 15px;
 }
 .search{
     width: 200px;
@@ -121,8 +126,12 @@ header{
 .submenu a{
     image-resolution: from-image;
     text-decoration: none;
-    color: var(--color-green);
+    color: var(--color-golden);
     font-size: 14px;
+}
+.submenu-container{
+    width: 100%;
+    background-color: var(--color-green);
 }
 .submenu{
     margin: auto;
@@ -130,6 +139,14 @@ header{
     padding: 15px;
     display: flex;
     justify-content: space-around;
+    transition: all 0.3s ease;
+    
+}
+.hidden{
+    height: 0;
+    padding: 0px;
+    opacity: 0.2;
+    visibility: hidden;
 }
 
 .header-js{
@@ -198,3 +215,33 @@ ul.address{
     padding-right: 5px;
 }
 
+
+form{
+    width: 70%;
+}
+.body-main-section input{
+    padding: 10px 25px;
+    margin: 15px 0px;
+    display: block;
+    border: 1px solid var(--color-gray);
+    width: 100%;
+    box-sizing: border-box;
+    font-size: var(--default-font-size);
+}
+.body-main-section input:focus{
+    border: 1px solid var(--color-dark);
+    outline: none;
+}
+.body-main-section input[type=submit]{
+    background-color: var(--color-green);
+    color: var(--color-white);
+    border: none;
+    font-size: var(--default-button-font-size);
+}
+.body-main-section input[type=submit]:hover{
+    cursor: pointer;
+}
+
+h2{
+    color: var(--color-green);
+}
