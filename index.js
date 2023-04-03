@@ -64,7 +64,7 @@ class Header extends HTMLElement {
   
   //Footer
   
-  class Footer extends HTMLElement {
+class Footer extends HTMLElement {
     connectedCallback() {
       this.innerHTML = 
         `
@@ -167,33 +167,74 @@ class Header extends HTMLElement {
         `
       
     }
-  }
+}
   
-  customElements.define('main-header', Header);
-  customElements.define('main-footer', Footer);
+customElements.define('main-header', Header);
+customElements.define('main-footer', Footer);
 
-  $(function(){
-    //the shrinkHeader variable is where you tell the scroll effect to start.
-    var shrinkHeader = 70;
-     $(window).scroll(function() {
-       var scroll = getCurrentScroll();
-       console.log(scroll);
-         if ( scroll >= shrinkHeader ) {
-              $('.header-container').addClass('smaller');
-              $('.submenu').addClass('hidden');
-           }
-           else {
-               $('.header-container').removeClass('smaller');
-               $('.submenu').removeClass('hidden');
-           }
-     });
-   function getCurrentScroll() {
-       return window.pageYOffset || document.documentElement.scrollTop;
-       }
-   });
+// class PopUpInfo extends HTMLElement{
+
+// }
+// <company-person bday="2000-01-01">
+
+// </company-person>
+// class CompanyPerson extends HTMLElement{
+//     constructor(){
+//         this.bday = this.getAttribute("bday");
+
+//     }
+//     method(){
+//         this.bday="1999-01-01"
+//         this.setAttribute("bday") = this.bday;
+//     }
+
+// }
+
+// class Products extends HTMLElement{
+//     constructor(){
+//         this.products = [];
+
+//     }
+//     AddToCart(myProduct){
+//         this.products.push(myProduct);
+//         this.innerHTML=myProduct.Render();//AdjacentHtml, ...
+//     }
+//     Render(){
+//         return;
+//     }
+// }
 
 
-var Products = { "Products" : [
 
+$(function(){
+//the shrinkHeader variable is where you tell the scroll effect to start.
+var shrinkHeader = 70;
+    $(window).scroll(function() {
+    var scroll = getCurrentScroll();
+    console.log(scroll);
+        if ( scroll >= shrinkHeader ) {
+            $('.header-container').addClass('smaller');
+            $('.submenu').addClass('hidden');
+        }
+        else {
+            $('.header-container').removeClass('smaller');
+            $('.submenu').removeClass('hidden');
+        }
+    });
+function getCurrentScroll() {
+    return window.pageYOffset || document.documentElement.scrollTop;
+    }
+});
+
+
+var Products = { "bread" : [
+    {"name" : "Whole corn bread", "description" : "Эрдэнэшишээр баялаг крем чийз шанзтай зөөлөн амтлаг талх", "price" : "3700"},
+    {"name" : "Onion sausage focaccia", "description" : 
+    "Зөөлхөн жажлууртай Focaccia-г мустард соус, шаржигнуурт сонгиноор бүрж амталсан салахын аргагүй амтат бүтээгдэхүүн",
+    "price" : "3800"},
+    {"name" : "Coffee kaya bread", "description" : "Кофены тансаг амтыг шингээж, өтгөрүүлсэн костард шанзаар арвижуулж бэлдсэн бүтээгдэхүүн",
+    "price" : "4500"},
+    {"name" : "Red bean bun bread", "description" : "Улаан буурцгийн бурмаар баяжуулсан чихэрлэг зөөлөн амтат талх",
+    "price" : "3700"}
 ]
 }
