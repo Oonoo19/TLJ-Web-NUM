@@ -7,47 +7,82 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
         <style>
-            .news{
+            section{
                 margin: auto;
                 width: 70%;
-                margin-top: 50px;
+                padding-top: 50px;
+            }
+            .new{
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: row;
+                background-color: #fff;
+                margin: 10px;
+                padding: 25px;
+            }
+            .new img {
+                margin: 10px;
+            }
+            .new h2{
+                color: var(--color-green);
+            } 
+            time{
+                color: #adadad;
+            }
+            .btn{
+                position: relative; 
+                padding: 5px 30px;  
+                border-radius: 48px; 
+                background:var(--color-green);
+                color: white;
+                text-decoration: none;
+            }
+            .hho{
+                
             }
         </style>
     </head>
     <body>
         <main-header></main-header>
-        <section class = "news">
-            <h1>Мэдээ1</h1>
-            <div>
-                <img src="" alt="Tous les Jours open">
-                <h2>Шинэ Салат & Сэндвичээ танилцуулж байна</h2>
-                <time>2023.03.15</time>
-                <p>Эрхэм хэрэглэгч та бүхэндээ шинээр худалдаанд гарч буй шинэ Салат & Сэндвичээ танилцуулж байна.</p>
-                    <input type="submit" value="Дэлгэрэнгүй">
+        <section class = "body-main-section">
+            <div class="new">
+                <img src="https://cdn.greensoft.mn/uploads/site/1200/post/new_b6a776746eab4f98c7352cc97a7ebfaade9ab346.jpg" alt="Tous les Jours open" width="28%" height="28%">
+                <div class="hho">
+                    <h2>Шинэ Салат & Сэндвичээ танилцуулж байна</h2>
+                    <time>2023.03.15</time>
+                    <p>Эрхэм хэрэглэгч та бүхэндээ шинээр худалдаанд гарч буй шинэ Салат & Сэндвичээ танилцуулж байна.</p>
+                    <a class="btn" href="#">Дэлгэрэнгүй</a>
+                </div>
             </div>
-            <div>
-                <img src="" alt="Tous les Jours open">
-                <h2>Сонгогдсон бялуунууд 30% хямдарлаа</h2>
-                <time>2022.06.15</time>
-                <p>Tous Les Jours салбаруудаaр сонгогдсон бялуунууд 30% хямдарлаа. Гэр бүлээрээ амралтын өдрөө ая тухтай,</p>
-                    <input type="submit" value="Дэлгэрэнгүй">
+            <div class="new">
+                <img src="https://cdn.greensoft.mn/cache/images/7/5/2/9/5/75295576b076a274c28942d62512009df10f2674.jpg" alt="Tous les Jours open" width="28%" height="28%">
+                <div class="article">
+                    <h2>Сонгогдсон бялуунууд 30% хямдарлаа</h2>
+                    <time>2022.06.15</time>
+                    <p>Tous Les Jours салбаруудаaр сонгогдсон бялуунууд 30% хямдарлаа. Гэр бүлээрээ амралтын өдрөө ая тухтай,</p>
+                    <a class="btn" href="#">Дэлгэрэнгүй</a>
+                </div></div>
+            <div class="new">
+                <img src="https://cdn.greensoft.mn/cache/images/8/1/6/6/a/8166aa94186b666f934fc635ae655b976980fe63.jpg" alt="Tous les Jours open" width="28%" height="28%">
+                <div class="article">
+                    <h2>TOUS Les JOURS бейкери 5 НАС ХҮРЛЭЭ</h2>
+                    <time>2022.06.15</time>
+                    <p>TOUS Les JOURS /Тү Лэ Жүр/ гэдэг нь францаар "Өдөр бүр" гэсэн утгатай бөгөөд өдөр бүр шинэхэн хийсэн амтат</p>
+                    <a class="btn" href="#">Дэлгэрэнгүй</a>
+                </div>
             </div>
-            <div>
-                <img src="" alt="Tous les Jours open">
-                <h2>TOUS Les JOURS бейкери 5 НАС ХҮРЛЭЭ</h2>
-                <time>2022.06.15</time>
-                <p>TOUS Les JOURS /Тү Лэ Жүр/ гэдэг нь францаар "Өдөр бүр" гэсэн утгатай бөгөөд өдөр бүр шинэхэн хийсэн амтат</p>
-                    <input type="submit" value="Дэлгэрэнгүй">
-            </div>
-            <div>
-                <img src="" alt="Tous les Jours open">
-                <h2>TOUS LES JOURS бейкери 2020 оны “ШИНЭ ЖИЛ”-ийн</h2>
-                <time>2022.06.15</time>
-                <p>Та бидний дуртай “TOUS les JOURS”-Тү Лэ Жүр бейкерийн 2020 оны “Шинэ жил”-ийн баярын бялууг</p>
-                    <input type="submit" value="Дэлгэрэнгүй">
+            <div class="new">
+                <img src="https://cdn.greensoft.mn/cache/images/8/1/6/6/a/8166aa94186b666f934fc635ae655b976980fe63.jpg" alt="Tous les Jours open" width="28%" height="28%">
+                <div class="article">
+                    <h2>TOUS LES JOURS бейкери 2020 оны “ШИНЭ ЖИЛ”-ийн</h2>
+                    <time>2022.06.15</time>
+                    <p>Та бидний дуртай “TOUS les JOURS”-Тү Лэ Жүр бейкерийн 2020 оны “Шинэ жил”-ийн баярын бялууг</p>
+                    <a class="btn" href="#">Дэлгэрэнгүй</a>
+                </div>
             </div>
         </section>
         <main-footer></main-footer>
     </body>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
     <script src="../index.js"></script>
 </html>

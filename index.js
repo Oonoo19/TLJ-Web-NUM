@@ -51,8 +51,8 @@ class Header extends HTMLElement {
         <nav class="submenu">
         <a href="introduction.html">Танилцуулга</a>
         <a href="product.html">Бүтээгдэхүүн</a>
-        <a href="product.html">Мэдээ</a>
-        <a href="product.html">Салбарын мэдээлэл</a>
+        <a href="news.html">Мэдээ</a>
+        <a href="branches.html">Салбарын мэдээлэл</a>
         </nav>
     </div>
       
