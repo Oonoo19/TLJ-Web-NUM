@@ -11,6 +11,7 @@ export default class ProductInfo {
                 console.log(product.name);
                 const productElement = document.createElement('div');
                 productElement.innerHTML = `
+                    <img src=${product.image} alt="bread">
                     <h2>${product.name}</h2>
                     <p>${product.price}</p>
                     <p>${product.description}</p>
