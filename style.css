@@ -21,6 +21,7 @@
     --desktop-padding-side:240px;
 }
 
+/*body default style*/
 body{
     background-color: var(--color-light-beige);
     font-family: var(--default-font);
@@ -29,10 +30,11 @@ body{
     display: flex;
     flex-direction: column;
 }
+/*set margin-top content section to show below header*/
 .body-main-section{
     margin-top: 120px;
 }
-
+/*header style*/
 header{
     background-color: var(--color-light-beige);
     display: flex;
@@ -46,10 +48,13 @@ header{
     z-index: 1000;
     overflow: hidden;
 }
+/*header outer container is for bottom border*/
 .header-container-outer{
     width: 100%;
     border-bottom: var(--color-green) solid 1px;
 }
+/*header container contains logo, round menus, and search bar.
+set margin and width to center 70%*/
 .header-container{
     margin: auto;
     width: 70%;
@@ -60,9 +65,11 @@ header{
     align-items: center;
     transition: padding 0.3s;
 }
+/*smaller class is for shrink header*/
 .smaller{
     padding: 15px;
 }
+/*search bar contains logo and input*/
 .search{
     width: 200px;
     background-color: var(--color-white);
@@ -71,57 +78,41 @@ header{
     justify-content: flex-start;
     padding: 5px;
 }
+/*search bar input style*/
 .search input{
     border: none;
     background-color: var(--color-white);
     color: var(--color-green);
     width: 100%;
 }
-
+/*set placeholder for search bar*/
 .search ::placeholder{
     color: var(--color-green);
     opacity: 0.8;
 }
-
 /*input hover design*/
 .search input:focus{
     border: none;
     outline: none;
 }
-
-.menu{
-    width: 100%;
-}
+/*round menu width*/
 .round-menu{
     width: 200px;
 }
-
+/*round menu link style*/
 .round-menu a{
     text-decoration: none;
     color: var(--color-green);
 }
+/*round menu svg and base64 image size*/
 .round-menu img, .round-menu svg{
-    
     width: 27px;
     height: 27px;
 }
+/*round menu svg and base64 image size when hovered*/
 .round-menu img:hover, .round-menu svg:hover{
     transform: scale(1.2);
 }
-
-/*Animation*/
-@keyframes icon{
-    from{
-        width: 27px;
-        height: 27px;
-    }
-    to{
-        width: 30px;
-        height: 30px;
-    }
-}
-
-
 /*submenu style*/
 .submenu a{
     image-resolution: from-image;
@@ -245,3 +236,25 @@ form{
 h2{
     color: var(--color-green);
 }
+
+@media (max-width: 575.98px) { 
+    .header-container{
+        width: 100%;
+    }
+    .submenu{
+        width: 100%;
+    }
+}
+
+/* Small devices*/
+@media screen and (min-width: 576px)
+and (max-width: 991.98px) { 
+    .header-container{
+        width: 100%;
+    }
+    .submenu{
+        width: 100%;
+    }
+}
+/* medium devices*/
+
