@@ -1,0 +1,51 @@
+[
+    {
+        "id" : 1,
+        "name" : "Whole corn bread", 
+        "description" : "Эрдэнэшишээр баялаг крем чийз шанзтай зөөлөн амтлаг талх", 
+        "price" : "3700",
+        "image" : "https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/bread1.webp"
+    },
+    {
+        "id" : 2,
+        "name" : "Onion sausage focaccia", 
+        "description" : "Зөөлхөн жажлууртай Focaccia-г мустард соус, шаржигнуурт сонгиноор бүрж амталсан салахын аргагүй амтат бүтээгдэхүүн",
+        "price" : "3800",
+        "image" : "https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/focaccia.jpeg"
+    },
+    {
+        "id" : 3,
+        "name" : "Coffee kaya bread", 
+        "description" : "Кофены тансаг амтыг шингээж, өтгөрүүлсэн костард шанзаар арвижуулж бэлдсэн бүтээгдэхүүн",
+        "price" : "4500",
+        "image" : "https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/coffee_kaya.jpeg"
+    },
+    {
+        "id" : 4,
+        "name" : "Red bean bun bread", 
+        "description" : "Улаан буурцгийн бурмаар баяжуулсан чихэрлэг зөөлөн амтат талх",
+        "price" : "3700",
+        "image" : "https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/redbean.jpeg"
+    },
+    {
+        "id" : 5,
+        "name" : "Fresh pearl cake", 
+        "description": "Цэвэр сүүн кремтэй хөвсгөр зөөлөн цагаан кекстэй жимсний коктейл хавчуургатай гүзээлзгэнэ нэрсээр чимэглэсэн амтат бялуу",
+        "price" : "55900",
+        "image" : "https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/fresh_pearl.jpeg"
+    },
+    {
+        "id" : 6,
+        "name" : "Blueberry love cake", 
+        "description": "Амтат нэрс жимсний чанамалтай, нэрсний амттай цэвэр маслон кремээр бүрж макароноор чимэглэсэн бялуу",
+        "price" : "36900",
+        "image" : "https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/blueberry_love.jpeg"
+    },
+    {
+        "id" : 7,
+        "name" : "Chocolate Chiffon No.3", 
+        "description": "Шоколадтай хөвсгөр зөөлөн шиффон кекстэй цэвэр сүүн кремээр бүрсэн кексний агууламж ихтэй бялуу",
+        "price" : "52900",
+        "image" : "https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/chocolate_chiffon.jpeg"
+    }
+]

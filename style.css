@@ -258,3 +258,8 @@ and (max-width: 991.98px) {
 }
 /* medium devices*/
 
+/*dark light mode*/
+@media (prefers-color-scheme: dark){
+
+}
+

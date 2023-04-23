@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Bread",
+        "product": [1, 2, 3, 4]
+    },
+    {
+        "name": "Cake",
+        "product": [5, 6, 7]
+    }
+]
