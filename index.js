@@ -1,10 +1,10 @@
 import Header from './modules/header.js';
 import Footer from './modules/footer.js';
-import ProductInfo from './modules/productInfo.js';
+import Product from './modules/productInfo.js';
 const myHeader = new Header;
 const myFooter = new Footer;
-let myProduct = new ProductInfo;
-myProduct.fetchInfo();
+let myProduct = new Product;
+//myProduct.fetchInfo();
 
 // class PopUpInfo extends HTMLElement{
 

@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
         <script type = "module" src="./index.js"></script>
+        <script type = "module" src="./modules/productInfo.js"></script>
         <style>
             section{
                 margin: auto;
@@ -16,22 +17,28 @@
             #product img{
                 width: 100%;
             }
-            #product{
+            #product-container{
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(250px, auto));
                 gap: 20px;
-            }
-
-            
+            }    
+            .category ul{
+                list-style: none;
+            }     
         </style>
     </head>
     <body>
         <main-header></main-header>
         <section class="body-main-section">
             <div class = "category">
-
+                <ul>
+                    <li><button class="bread">Талх</button></li>
+                    <li><button class="cake">Бялуу</button></li>
+                </ul>
             </div>
-            <div id="product">
+            <div id="product-container">
+                <product-item product-id = 1 ></product-item>
+                <product-item product-id = 2 ></product-item>
             </div>
         </section>  
         <main-footer></main-footer>
