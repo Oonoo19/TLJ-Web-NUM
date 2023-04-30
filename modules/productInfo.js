@@ -1,4 +1,4 @@
-export default class ProductInfo {
+ class ProductInfo {
     fetchInfo() {
         fetch('https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/data/product.json')
         .then(response => response.json())
@@ -26,10 +26,18 @@ class Product extends HTMLElement {
         super();
         const shadow = this.attachShadow({ mode: 'open' });
         const productId = this.getAttribute('product-id');
-        fetch('https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/data.json')
+        const category = "";
+        const breadButton = this.getElementsByClassName('bread');
+        const cakeButton = this.getElementsByClassName('cake');
+        breadButton.addEventListener('click', () => {category = 'bread'});
+        cakeButton.addEventListener('click', () => category = 'cake');
+        fetch('https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/data/product.json')
         .then(response => response.json())
         .then(products => {
-            const product = products.find(p => p.id === productId);
+            products.forEach(product =>{
+                console.log(product.id);
+            });
+            const product = products.find(p => p.id == productId);
             const template = document.createElement('template');
             template.innerHTML = `
             <style>
@@ -64,3 +72,4 @@ class Product extends HTMLElement {
     }
 }
 customElements.define('product-item', Product);
+export default Product;
