@@ -1,75 +1,64 @@
- class ProductInfo {
-    fetchInfo() {
-        fetch('https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/data/product.json')
-        .then(response => response.json())
-        .then(data => {
-            console.log("hey")
-            const productContainer = document.querySelector('#product');
-            console.log(productContainer);
-            data.forEach(product => {
-                console.log(product.name);
-                const productElement = document.createElement('div');
-                productElement.innerHTML = `
-                    <img src=${product.image} alt="bread">
-                    <h2>${product.name}</h2>
-                    <p>${product.price}</p>
-                    <p>${product.description}</p>
-                `;
-                productContainer.appendChild(productElement);
-            });
-        })
-        .catch(error => console.error(error));
+export default class ProductInfo extends HTMLElement {
+    constructor() {
+      super();
+      this._shadowRoot = this.attachShadow({ mode: 'open' });
+      this.category = 'all';
+      this.cart = [];
+    }
+  
+    async connectedCallback() {
+      const products = await this.fetchProducts();
+      this._products = products;
+      this.render(products);
+    }
+  
+    onCategoryChanged(oldValue, newValue) {
+      if (oldValue !== newValue) {
+        this.render(this.filterProducts(newValue));
+      }
+    }
+  
+    async fetchProducts() {
+      const response = await fetch('https://api.jsonbin.io/v3/b/644e64d48e4aa6225e93bb07/latest', {
+        headers: {
+          'X-Master-Key': '$2b$10$P81udmXfTImTITJc3YqYMuE7HVJQwgy.EV7Cx87ID0AgvV7B9CZTy'
+        }
+      });
+      const data = await response.json();
+      return data.record;
+    }
+  
+    filterProducts(category) {
+      const products = this._products;
+  
+      if (category === 'all') {
+        return products;
+      }
+  
+      return products.filter(product => product.category === category);
+    }
+  
+    render(products) {
+        this._shadowRoot.innerHTML = `
+        <style>
+            
+        </style>
+        <ul class="product-list">
+        ${products.map(product => `
+          <each-product name="${product.name}" description="${product.description}" 
+          image="${product.image}" price="${product.price}" product="${JSON.stringify(product)}"></each-product>
+          `).join('')}
+          </ul>
+        `;
+        const categoryButtons = document.querySelectorAll('.category');
+    
+        categoryButtons.forEach(button => button.addEventListener('click', (event) => {
+            const category = event.target.id;
+            window.history.pushState({ category }, category, `?category=${category}`);
+            this.onCategoryChanged(this.category, event.target.id);
+        }));
+    
+        
     }
 }
-class Product extends HTMLElement {
-    constructor(){
-        super();
-        const shadow = this.attachShadow({ mode: 'open' });
-        const productId = this.getAttribute('product-id');
-        const category = "";
-        const breadButton = this.getElementsByClassName('bread');
-        const cakeButton = this.getElementsByClassName('cake');
-        breadButton.addEventListener('click', () => {category = 'bread'});
-        cakeButton.addEventListener('click', () => category = 'cake');
-        fetch('https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/data/product.json')
-        .then(response => response.json())
-        .then(products => {
-            products.forEach(product =>{
-                console.log(product.id);
-            });
-            const product = products.find(p => p.id == productId);
-            const template = document.createElement('template');
-            template.innerHTML = `
-            <style>
-                .product {
-                border: 1px solid #ccc;
-                padding: 10px;
-                }
-                h3 {
-                margin: 0;
-                }
-                p {
-                margin: 0;
-                }
-                button {
-                margin-top: 10px;
-                }
-            </style>
-            <div class="product" data-id="${product.id}">
-                <img src=${product.image} alt="bread">
-                <h3>${product.name}</h3>
-                <p>${product.price}</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            `;
-            template.content.querySelector('.add-to-cart').addEventListener('click', () => {
-                const event = new CustomEvent('add-to-cart', { detail: { id: product.id }});
-                this.dispatchEvent(event);
-            });
-            shadow.appendChild(template.content.cloneNode(true));
-        })
-        .catch(error => console.error(error));
-    }
-}
-customElements.define('product-item', Product);
-export default Product;
+window.customElements.define('product-list', ProductInfo);

@@ -1,6 +1,11 @@
 class Header extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: "open" });
+        this.template = document.createElement('template');
+    }
     connectedCallback() {
-        this.innerHTML = `
+        this.template.innerHTML = `
         <header>
         <div class = "header-container-outer">
             <div class = "header-container">
@@ -17,7 +22,7 @@ class Header extends HTMLElement {
                     <input type="text" placeholder="Search..">
                 </div>
                 <a href="index.html" class="menu-logo">
-                    <img src="../images/tlj_logo 2.webp" alt="Tous les Jours logo" class="logo" width="100%" height="100%">
+                    <slot name="logo"><img src="../images/tlj_logo 2.webp" alt="Tous les Jours logo" class="logo" width="100%" height="100%"></slot>
                 </a>
                 <nav class="round-menu">
                     
@@ -70,6 +75,10 @@ class Header extends HTMLElement {
             submenu.classList.remove("hidden");
         }
         });
+    }
+    connectedCallback() {
+        const instance = this.template.content.cloneNode(true);
+        this.shadowRoot.appendChild(instance);
     }
 }
 customElements.define('main-header', Header);
