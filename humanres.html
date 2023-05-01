@@ -5,28 +5,60 @@
         <meta charset="UTF-8">
         <meta name="description" content="Tous les Jours bakery products, order product, cake, bread">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/dbc3f754a8.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="../style.css">
         <style>
             section{
                 margin: auto;
                 width: 70%;
                 padding-top: 50px; 
+                text-align: center;
+                padding-top: 50px;
             }
+            .url{
+                display: flex;
+                width: 230px;
+                height: 40px;
+                background: var(--color-green);
+                border-radius: 10%;
+                margin: 5px;
+                align-items: center;
+                justify-content: space-around;
+            }
+            .url a{
+                color: white;
+                text-decoration: none;
+                flex-direction: column;
+            }
+            i{
+                color: white;
+            }
+           
         </style>
     </head>
     <body>
         <main-header></main-header>
-        <section class = "body-main-section">
-            <h2>Хүний нөөц</h2>
-            <p>Бид 2016 онд Солонгосын CJ Foodville корпорациас Tous Les Jours бейкэрийн сүлжээг Монголд нэвтрүүлж, 
-                хөгжүүлэх эрхийг аван дэлхийн стандартад нийцсэн Европ бейкерийн амт чанарыг эх орондоо нэвтрүүлэхээр  
-                манай хамт олон хичээн ажиллаж байна.</p>
-            <a href="https://www.zangia.mn/company/artisan">Ажлын байрны зарууд</a>
-            <p>Энэхүү фэйсбүүк хуудас нь нээлттэй ажлын байрны зар нийтэлдэг хуудас болно</p>
-            <a href="https://www.facebook.com/TousLesJoursMongoliaHR">facebook хуудас</a>
-        </section>    
+
+            <section class = "body-main-section">
+                <div class = "twourl">
+                    <h2>Хүний нөөц</h2>
+                    <p>Бид 2016 онд Солонгосын CJ Foodville корпорациас Tous Les Jours бейкэрийн сүлжээг Монголд нэвтрүүлж, 
+                        хөгжүүлэх эрхийг аван дэлхийн стандартад нийцсэн Европ бейкерийн амт чанарыг эх орондоо нэвтрүүлэхээр  
+                        манай хамт олон хичээн ажиллаж байна.</p>
+                    <div class ="url">
+                        <i class="fa fa-file-text-o"></i>
+                        <a href="https://www.zangia.mn/company/artisan">Ажлын байрны зарууд</a>
+                    </div>
+                    <p>Энэхүү фэйсбүүк хуудас нь нээлттэй ажлын байрны зар нийтэлдэг хуудас болно</p>
+                    <div class ="url">
+                        <i class="fa fa-user"></i>
+                        <a href="https://www.facebook.com/TousLesJoursMongoliaHR">Facebook хуудас</a>
+                    </div>
+                </div>
+            </section>  
+
         <main-footer></main-footer>
-        
+
     </body>
     <script type = "module" src="./index.js"></script>
 </html>
