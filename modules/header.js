@@ -1,11 +1,6 @@
 class Header extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({ mode: "open" });
-        this.template = document.createElement('template');
-    }
     connectedCallback() {
-        this.template.innerHTML = `
+        this.innerHTML =  `
         <header>
         <div class = "header-container-outer">
             <div class = "header-container">
@@ -75,10 +70,6 @@ class Header extends HTMLElement {
             submenu.classList.remove("hidden");
         }
         });
-    }
-    connectedCallback() {
-        const instance = this.template.content.cloneNode(true);
-        this.shadowRoot.appendChild(instance);
     }
 }
 customElements.define('main-header', Header);
