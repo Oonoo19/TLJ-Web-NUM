@@ -1,6 +1,6 @@
 class Header extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `
+        this.innerHTML =  `
         <header>
         <div class = "header-container-outer">
             <div class = "header-container">
@@ -17,7 +17,7 @@ class Header extends HTMLElement {
                     <input type="text" placeholder="Search..">
                 </div>
                 <a href="index.html" class="menu-logo">
-                    <img src="../images/tlj_logo 2.webp" alt="Tous les Jours logo" class="logo" width="100%" height="100%">
+                    <slot name="logo"><img src="../images/tlj_logo 2.webp" alt="Tous les Jours logo" class="logo" width="100%" height="100%"></slot>
                 </a>
                 <nav class="round-menu">
                     
