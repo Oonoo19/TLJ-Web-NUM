@@ -11,26 +11,116 @@
                 margin: auto;
                 width: 70%;
                 padding-top: 50px;
+                
             }
+            h2{
+                text-align: center;
+            }
+            .arrow {
+                border: solid black;
+                border-width: 0 3px 3px 0;
+                display: inline-block;
+                padding: 3px;
+            }
+            .down {
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+            }
+            .faq{
+                padding-bottom: 2px solid #fff ;
+                margin: 5px;
+                padding:0 20px 0 20px;
+                cursor: pointer;
+                /*background-color: #fff;*/
+               border-bottom: 0.5px solid var(--color-gray);
+            }
+            .question{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .answer{
+                max-height: 0;
+                overflow: hidden;
+                /* transition: max-height 1.4s ease; */
+            }
+            .faq.active .answer{
+                max-height: 300px;
+                animation: fade 1s ease-in-out; 
+            }
+            .faq.active i{
+                transform: rotate(225deg);
+            }
+            i{
+                transition: transform 0.5s ease-in;
+            }
+            /* @keyframes fade {
+                from{
+                    opacity: 0;
+                    transform: translateY(-10px);
+
+                }
+                to{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                
+            } */
         </style>
     </head>
     <body> 
         <main-header></main-header>
         <section class = "body-main-section">
-                <h2>ТҮГЭЭМЭЛ АСУУЛТ & ХАРИУЛТ</h2>
-                <a href="">Хэрхэн захиалга өгөх вэ?</a>
-                <p>Та өөрт ойрхон салбарын утсаар 24-48 цагийн өмнө захиалга өгөх боломжтой ба захиалсан бүтээгдэхүүнээ өөрийн биеэр очиж авна. 
-                Эсвэл та хүргэлтийн үйлчилгээ авах бол Бялуу хүргэлтийн үйлчилгээ цэсийг сонгоно уу</p>
-                <a href="">ЗАГВАРАА ӨӨРӨӨ СОНГООД БЯЛУУ ХИЙЛГЭЖ БОЛОХ УУ?</a>
-                <p>Манайх франчайз бейкери учраас стандартын дагуу бүтээгдэхүүнээ үйлдвэрлэдэг. Бялууны хэмжээ болон загварыг өөрчлөх боломжгүй болно.</p>
-                <a href="">БЯЛУУ ХАДГАЛАХ ХУГАЦАА ХЭД ХОНОГ ВЭ?</a>
-                <p>Манай бялуунуудад хадгалагч болон уртасгагч бодис ордоггүй ба 5 градусаас дээшгүй хэмд Сүүн кремтэй бялууг 24 цаг, Мусс болон Маслон кремтэй бялууг 72 цаг хадгалах боломжтой байдаг. 
-                    Өрөөний температурт 30 минутаас дээшгүй хугацаанд байлгаж хэрэглэнэ үү</p>
-                <a href="">БЯЛУУ БОЛОН ЦЭЦГИЙН ХҮРГЭЛТ БАЙГАА ЮУ?</a>
-                <p>Та манай амтат бялууг, анхилам цэцгийн хамтаар хүргүүлж авах бол манай хамтрагч байгууллага болох 
-                    PEONY FLOWER BOUTIQUE хаягаар холбогдоорой</p>
+            <h2>ТҮГЭЭМЭЛ АСУУЛТ & ХАРИУЛТ</h2>
+            <div class="faq">
+                <div class="question">
+                    <h3>ХЭРХЭН ЗАХИАЛГА ӨГӨХ ВЭ?</h3>
+                    <i class="arrow down"></i>
+                </div>
+                <div class="answer">
+                    <p>Та өөрт ойрхон салбарын утсаар 24-48 цагийн өмнө захиалга өгөх боломжтой ба захиалсан бүтээгдэхүүнээ өөрийн биеэр очиж авна. 
+                        Эсвэл та хүргэлтийн үйлчилгээ авах бол Бялуу хүргэлтийн үйлчилгээ цэсийг сонгоно уу</p>
+                </div>
+            </div>
+            <div class="faq">
+                <div class="question">
+                    <h3>ЗАГВАРАА ӨӨРӨӨ СОНГООД БЯЛУУ ХИЙЛГЭЖ БОЛОХ УУ?</h3>
+                    <i class="arrow down"></i>
+                </div>
+                <div class="answer">
+                    <p>Манайх франчайз бейкери учраас стандартын дагуу бүтээгдэхүүнээ үйлдвэрлэдэг. Бялууны хэмжээ болон загварыг өөрчлөх боломжгүй болно.</p>    
+                </div>
+            </div>
+            <div class="faq">
+                <div class="question">
+                    <h3>БЯЛУУ ХАДГАЛАХ ХУГАЦАА ХЭД ХОНОГ ВЭ?</h3>
+                    <i class="arrow down"></i>
+                </div>
+                <div class="answer">
+                    <p>Манай бялуунуудад хадгалагч болон уртасгагч бодис ордоггүй ба 5 градусаас дээшгүй хэмд Сүүн кремтэй бялууг 24 цаг, Мусс болон Маслон кремтэй бялууг 72 цаг хадгалах боломжтой байдаг. 
+                        Өрөөний температурт 30 минутаас дээшгүй хугацаанд байлгаж хэрэглэнэ үү</p>
+                </div>
+            </div>
+            <div class="faq">
+                <div class="question">
+                    <h3>БЯЛУУ БОЛОН ЦЭЦГИЙН ХҮРГЭЛТ БАЙГАА ЮУ?</h3>
+                    <i class="arrow down"></i>
+                </div>
+                <div class="answer">
+                    <p>Та манай амтат бялууг, анхилам цэцгийн хамтаар хүргүүлж авах бол манай хамтрагч байгууллага болох 
+                        PEONY FLOWER BOUTIQUE хаягаар холбогдоорой</p>
+                </div>
+            </div>
         </section>
         <main-footer></main-footer>
     </body>
+    <script>
+        const faqs = document.querySelectorAll(".faq");
+        faqs.forEach(faq =>{
+            faq.addEventListener("click", ()=> {
+                faq.classList.toggle("active");
+            })
+        })
+    </script>
     <script type = "module" src="./index.js"></script>
 </html>
