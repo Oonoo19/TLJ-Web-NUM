@@ -12,27 +12,157 @@
                 width: 70%;
                 padding-top: 50px;
             }
+            .profile-p{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: var(--color-white);
+                width: 247px;
+                height: 274px;
+                
+            }
+            .profile-row{
+                display: flex;
+                width: 30%;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .profile-p img {
+                border-radius: 50px;
+            }
+            .inf-input{
+                background-color: var(--color-white);
+                padding: 40px 70px;
+            }
+            .choose-type{
+                background-color: var(--color-white);
+                color: var(--color-green);
+                padding: 5px   15px;
+                margin: 10px 0;
+                width: 217px;
+            }
+            .main-part{
+                display: flex;
+                flex-direction: row;
+            }
+            .information{
+                margin: 0 0 0 0 ;
+                width: 60%;
+            }
+            .information h3{
+                color: var(--color-green);
+            }
+            .sign-out{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--color-green);
+                width: 247px;
+                height: 40px;
+            }
+            .sign-out a{
+                color: var(--color-white);
+                text-decoration: none;
+            }
+            .choose{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+            }
+            .save{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--color-green);
+                color: white;
+                width: 247px;
+                height: 40px;
+            }
+            .return{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--color-light-gray);
+                width: 247px;
+                height: 40px;
+            }
         </style>
     </head>
     <body>
         <main-header></main-header>
         <section class="body-main-section">
-            <img src="#" alt="Profile">
-            <caption>Мөнхцэцэг</caption>
-            <label for="fname">Нэр:
-                <input type="text" class="fname" name="fname"><br><br>
-            </label>
-            <label for="lname">Овог:
-                <input type="text" class="lname" name="lname"><br><br>
-            </label>
-            <label for="email">Email:
-                <input type="email" class="email" name="email">
-            </label>
-            <label for="phone">Phone:
-                <input type="text" name="phone" class="form-control">
-            </label>
+            <div class="main-part">
+                <div class="profile-row">
+                    <div class="profile-p">
+                        <img src="images/profile_img.jpeg" alt="Profile" width="170" height="170">
+                        <h3>Мөнхцэцэг</h3>
+                    </div>
+                    <div class="choose-type">
+                        <p>Профайл засах</p>
+                        <p>Хаягийн мэдээлэл</p>
+                        <p>Favorites</p>
+                    </div>
+                    <div class="sign-out">
+                        <a href="index.html">Гарах</a>
+                    </div>
+                </div>
+                
+                <div class="information">
+                    <h3>Профайл засах</h3>
+                    <div class="inf-input">
+                        <label for="email">Email:
+                            <input type="email" class="email" name="email">
+                        </label>
+                        <label for="fname">Нэр:
+                            <input type="text" class="fname" name="fname">
+                        </label>
+                        <label for="lname">Овог:
+                            <input type="text" class="lname" name="lname">
+                        </label>
+                        <div class="choose">
+                            <div class="save">
+                                <p>Хадгалах</p>
+                            </div>
+                            <div class="return">
+                                <p>Буцах</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="information">
+                    <h3>Хаягийн мэдээлэл</h3>
+                    <div class="inf-input">
+                        <label for="province">Аймаг/Хот:
+                            <input type="text" class="province" name="email">
+                        </label>
+                        <label for="fname">Дүүрэг хороо:
+                            <input type="text" class="fname" name="fname"><br><br>
+                        </label>
+                        <label for="lname">Хороо:
+                            <input type="text" class="lname" name="lname"><br><br>
+                        </label>
+                        <label for="lname">Орц тоот:
+                            <input type="text" class="lname" name="lname"><br><br>
+                        </label>
+                    </div>
+                </div>
+                <div class="information">
+                    <h3>Favorites</h3>
+                </div> -->
+            </div>
         </section>
         <main-footer></main-footer>
     </body>
+    <script>
+        const faqs = document.querySelectorAll(".information");
+        faqs.forEach(faq =>{
+            faq.addEventListener("click", ()=> {
+                faq.classList.toggle("active");
+            })
+        })
+    </script>
     <script type = "module" src="./index.js"></script>
 </html>
