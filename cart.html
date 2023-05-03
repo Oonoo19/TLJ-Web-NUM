@@ -62,7 +62,14 @@
                 cursor: pointer;
                 border-color: #0D4433;
             }
-            #product-quantity{
+            #product-quantity1{
+                border: 1px solid #0D4433;
+                max-width: 80px;
+                padding: 2px;
+                text-align: center;
+                font-size: 18px;
+            }
+            #product-quantity2{
                 border: 1px solid #0D4433;
                 max-width: 80px;
                 padding: 2px;
@@ -86,9 +93,8 @@
                 border-bottom: 1px solid #CCBEA6;
             }
             label{
-                margin: 0px 0px 0px 30px;
+                margin: 0px 0px 0px 0px;
                 color: #0D4433;
-                
             }
             .price{
                 font-size: 0.8rem;
@@ -136,14 +142,14 @@
                 color: #0D4433;
             }
         </style>
+        <script type = "module" src="./index.js"></script>
     </head>
     <body>
         <main-header></main-header>
         <section class="body-main-section">
-
             <article class="left-container">
                 <div class="cart-header">
-                    <H3>Таны сагс</H3>
+                    <H3>Таны сагс &#128722;</H3>
                     <button type="button" class="cart-btn">Сагс хоослох</button>
                 </div>
                 <div class="cart-container">
@@ -154,8 +160,8 @@
                         <div class="right">
                             <h4>Whole corn bread</h4>
                             <form action="add-to-cart.php" method="post" class="form">
-                                <input type="number" id="product-quantity" name="product-quantity" min="1" max="10" value="1">
-                                <label for="product-price"><span class="price">Үнэ</span> 3700</label>
+                                <label for="product-quantity1"><span class="price">Үнэ</span> 3700</label>
+                                <input type="number" id="product-quantity1" name="product-quantity" min="1" max="10" value="1">
                             </form>
                         </div>
                         
@@ -168,8 +174,8 @@
                         <div class="right">
                             <h4>Red bean bun bread</h4>
                             <form action="add-to-cart.php" method="post">
-                                <input type="number" id="product-quantity" name="product-quantity" min="1" max="10" value="1">
-                                <label for="product-price"><span class="price">Үнэ</span> 3700</label>
+                                <label for="product-quantity2"><span class="price">Үнэ</span> 3700</label>
+                                <input type="number" id="product-quantity2" name="product-quantity" min="1" max="10" value="1">
                             </form>
                         </div>
                         
@@ -212,5 +218,4 @@
         </section>
         <main-footer></main-footer>
     </body>
-    <script type = "module" src="./index.js"></script>
 </html>
