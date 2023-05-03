@@ -4,6 +4,13 @@ export default class ProductInfo extends HTMLElement {
       this._shadowRoot = this.attachShadow({ mode: 'open' });
       this.category = 'all';
       this.cart = [];
+      const storedData = localStorage.getItem('cartData');
+      if(storedData){
+          this.cartProducts = JSON.parse(storedData);
+      }else{
+          this.cartProducts = [];
+      }
+      //localStorage.removeItem('cartData');
     }
   
     async connectedCallback() {
@@ -51,12 +58,21 @@ export default class ProductInfo extends HTMLElement {
           </ul>
         `;
         const categoryButtons = document.querySelectorAll('.category');
+        const eachProducts = this._shadowRoot.querySelectorAll('each-product');
+        console.log(eachProducts);
+        eachProducts.forEach(product => product.addEventListener('add-to-cart', (event) =>{
+            this.cartProducts.push(JSON.parse(event.detail.product));
+            const cartProductsJson = JSON.stringify(this.cartProducts);
+            console.log(this.cartProducts);
+            localStorage.setItem('cartData', cartProductsJson);
+        }));
     
         categoryButtons.forEach(button => button.addEventListener('click', (event) => {
             const category = event.target.id;
             window.history.pushState({ category }, category, `?category=${category}`);
             this.onCategoryChanged(this.category, event.target.id);
         }));
+        
     
         
     }

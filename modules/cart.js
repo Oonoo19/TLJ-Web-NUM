@@ -1,16 +1,21 @@
 import html from './utility.js'
 export default class Cart extends HTMLElement {
-    constructor(){
+    constructor(cart){
         super();
-        this._shadowRoot = this.attachShadow({ mode: 'open' });
-        this.cart = [];
+        const storedData = localStorage.getItem('cartData');
+        if(storedData){
+            this.cart = JSON.parse(storedData);
+        }else{
+            this.cart = [];
+        }
+        console.log(this.cart);
     }
     connectedCallback() {
         this.render(this.cart);
     }
 
-    render(products) {
-        this._shadowRoot.innerHTML = `
+    render(cart) {
+        this.innerHTML = `
         <style>
             
         </style>
