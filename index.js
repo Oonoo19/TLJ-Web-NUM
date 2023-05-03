@@ -1,9 +1,20 @@
 import Header from './modules/header.js';
 import Footer from './modules/footer.js';
-import Product from './modules/productInfo.js';
 const myHeader = new Header;
 const myFooter = new Footer;
-let myProduct = new Product;
+
+// const cart = document.querySelector('cart-products');
+//     console.log(cart);
+
+// const productList = document.querySelector('product-list');
+// productList.addEventListener('add-to-cart', (event) => {
+//     const product = event.detail.info;
+//     console.log(product);
+//     const cart = document.querySelector('cart-products');
+//     console.log(cart);
+//     cart.addProduct(product);
+// });
+
 //myProduct.fetchInfo();
 
 // class PopUpInfo extends HTMLElement{

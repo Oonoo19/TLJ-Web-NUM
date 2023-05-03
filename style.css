@@ -8,6 +8,7 @@
     --color-default-border: 0.5px;
     --color-white: #ffffff;
     --color-gray: #7f827f;
+    --color-light-gray: #dadada;
 
     --default-font:'Mulish', sans-serif;
     --menu-font-size:14px;
@@ -260,6 +261,5 @@ and (max-width: 991.98px) {
 
 /*dark light mode*/
 @media (prefers-color-scheme: dark){
-
+    
 }
-

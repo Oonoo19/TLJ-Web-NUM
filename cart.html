@@ -6,6 +6,8 @@
         <meta name="description" content="Tous les Jours bakery products, order product, cake, bread">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
+        <script type = "module" src="./modules/cart.js"></script>
+        <script type = "module" src="./modules/product.js"></script>
         <style>
             section{
                 display: flex;
@@ -147,6 +149,9 @@
     <body>
         <main-header></main-header>
         <section class="body-main-section">
+            <div class="cart-container">
+                <cart-products></cart-products>
+            </div>
             <article class="left-container">
                 <div class="cart-header">
                     <H3>Таны сагс &#128722;</H3>
