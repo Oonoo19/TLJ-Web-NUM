@@ -17,7 +17,7 @@ class Header extends HTMLElement {
                     <input type="text" placeholder="Search..">
                 </div>
                 <a href="index.html" class="menu-logo">
-                    <slot name="logo"><img src="../images/tlj_logo 2.webp" alt="Tous les Jours logo" class="logo" width="100%" height="100%"></slot>
+                    <slot name="logo"><img src="../images/tlj_logo 2.webp" alt="Tous les Jours logo" class="logo" style="width: 100%; height: 100%;"></slot>
                 </a>
                 <nav class="round-menu">
                     
