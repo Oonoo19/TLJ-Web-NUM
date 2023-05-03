@@ -1,7 +1,10 @@
 import Header from './modules/header.js';
 import Footer from './modules/footer.js';
+import Cart from './modules/cart.js';
+import Product from './modules/product.js';
 const myHeader = new Header;
 const myFooter = new Footer;
+
 
 // const cart = document.querySelector('cart-products');
 //     console.log(cart);
