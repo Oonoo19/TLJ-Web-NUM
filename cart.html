@@ -16,6 +16,11 @@
                 width: 70%;
                 margin: 150px auto;
             }
+            .cart-container{
+                display: grid;
+                grid-template-columns: 1fr;
+
+            }
             .left-container{
                 flex-direction: column;
                 flex: 1.5;
@@ -84,6 +89,7 @@
             input[type=number]::-webkit-inner-spin-button {
                 opacity: 1;
                 color: var(--color-green);
+            }
             input::-webkit-outer-spin-button,
             input::-webkit-inner-spin-button {
                 -webkit-appearance: none;
@@ -175,29 +181,13 @@
     <body>
         <main-header></main-header>
         <section class="body-main-section">
-            <div class="cart-container">
-                <cart-products></cart-products>
-            </div>
             <article class="left-container">
                 <div class="cart-header">
                     <h2>Таны сагс </h2>
-                    <button type="button" class="cart-btn">Сагс хоослох</button>
+                    <button type="button" class="cart-btn remove-all-btn">Сагс хоослох</button>
                 </div>
                 <div class="cart-container">
-                    <div class="cart-box">
-                        <div class="left">
-                            <img src="/images/1.png" alt="" width="150" height="150">
-                        </div>
-                        <div class="right">
-                            <h4>Whole corn bread</h4>
-                            <form action="add-to-cart.php" method="post" class="form">
-                                <input type="number" id="product-quantity1" name="product-quantity" min="1" max="10" value="1">
-                                <label for="product-quantity1"><span class="price">Үнэ</span> 3700</label>
-                            </form>
-                            
-                        </div> 
-                    </div>
-
+                    <cart-products></cart-products>
                 </div>
             </article>
 
