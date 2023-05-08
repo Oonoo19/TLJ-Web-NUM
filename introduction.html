@@ -22,8 +22,9 @@
             section h2{
                 text-transform: uppercase;
             }
-            .company-intro{
+            .company-intro p{
                 font-family: var(--default-font);
+                text-align: justify;
             }
             .intro-img{
                 text-align: center;
@@ -31,8 +32,9 @@
             }
             .intro-img img{
                 margin: 0 10px 0 10px;
+                width: 31%;
             }
-            .aaa{
+            .shape{
                 display: flex;
                 width: 190px;
                 height: 150px;
@@ -54,6 +56,9 @@
                 color: var(--color-golden);
                 font-size: 3em;            
             }
+            .VG img{
+                    width: 30%;
+                }
             .vision{
                 display: flex;
                 justify-content: center;
@@ -83,6 +88,81 @@
             .VG {
                 margin: 40px;
             }
+            @media only screen and (max-width: 575px){
+                .intro-img{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0 10px 0 10px;
+                }
+                .intro-img img{
+                    width: 100%;
+                    margin: 5px;
+                }
+                .shape{
+                    width: 150px;
+                    height: 100px;
+                }
+                .goal{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    margin: 20px;
+                    align-items: center;
+                }
+                .vision{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    margin: 20px;
+                    align-items: center;
+                }
+                .VG img{
+                    width: 100%;
+                }
+                .VG {
+                margin: 0px;
+            }
+                
+            }
+            @media only screen and (min-width: 575px) and (max-width: 990px){
+                section{
+                margin: auto;
+                width: 90%;
+                padding-top: 50px;
+                }
+                .intro-img{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0 10px 0 10px;
+                    align-items: center;
+                }
+                .intro-img img{
+                    width: 80%;
+                    margin: 2px;
+                }
+                .shape{
+                    width: 190px;
+                    height: 140px;
+                }
+                .goal{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    margin: 20px;
+                    align-items: center;
+                }
+                .vision{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    margin: 20px;
+                    align-items: center;
+                }
+                .VG img{
+                    width: 100%;
+                }
+            }
+           
         </style>
     </head>
     <body>
@@ -100,37 +180,37 @@
                 ба 20 гаруй жилийн туршлагаар бүтээгдэхүүн хөгжүүлэлт, технологын давуу талыг ашиглан тасралтгүй шинэчлэлт, сайжруулалтыг хийж байна.<br><br>
             </p>
             <figure class="intro-img">
-                    <img src="https://cdn.greensoft.mn/uploads/users/45/images/14595815_992675530879103_2052536330328294802_n.jpg" alt="Tous les Jours open" style="width: 31%; height: 31%;">
-                    <img src="https://cdn.greensoft.mn/uploads/users/45/images/14884456_996246713855318_5210407971483153694_o.jpg" alt="Tous les Jours open" style="width: 31%; height: 31%;">
-                    <img src="https://cdn.greensoft.mn/uploads/users/45/images/14976411_996239353856054_7015545120366696878_o.jpg" alt="Tous les Jours open" style="width: 31%; height: 31%;"> 
+                    <img src="https://cdn.greensoft.mn/uploads/users/45/images/14595815_992675530879103_2052536330328294802_n.jpg" alt="Tous les Jours open">
+                    <img src="https://cdn.greensoft.mn/uploads/users/45/images/14884456_996246713855318_5210407971483153694_o.jpg" alt="Tous les Jours open">
+                    <img src="https://cdn.greensoft.mn/uploads/users/45/images/14976411_996239353856054_7015545120366696878_o.jpg" alt="Tous les Jours open"> 
                     <figcaption>Анхны салбарын нээлтийн зураг</figcaption>
             </figure>
         </div>
         <div class="intro-count">
             <h2>2022 онд нийт</h2>
             <div class = "number-off-info">
-                <div class = "shape">13</div>
+                <div class = "shape"><p>13</p></div>
                 <div class = "shape">300+</div>
             </div>
             <p>Бид одоогийн байдлаар Улаанбаатар хотод 13 салбар болон ханган нийлүүлэлтийн төв үйлдвэрийн үйл ажиллагаагаа өргөжүүлэн ажиллаж байгаа 
                 бөгөөд цаашид ч салбарынхаа тоог нэмэн хэрэглэгчиддээ улам ойртон ажиллахаар төлөвлөж байна.</p>
             <div class="number-off-info">
-                <div class = "shape">1</div>
-                <div class = "shape">2</div>
-                <div class = "shape">3</div>
+                <div class = "shape">100+</div>
+                <div class = "shape">300+</div>
+                <div class = "shape">80+</div>
             </div>
             <p>Жил бүр онцлох уламжлалт баяруудад зориулан онцлох бүтээгдэхүүнийг худалдаанд гаргадаг.</p>
         </div>
         <div class="VG">
             <div class="vision">
-                <img src="https://cdn.greensoft.mn/uploads/users/45/images/3(26).JPG" alt="Tous les Jours open"  style="width: 30%; height: 30%;">
+                <img src="https://cdn.greensoft.mn/uploads/users/45/images/3(26).JPG" alt="Tous les Jours open"  >
                 <div class="vision-c">
                     <h2>Алсын хараа</h2>
                     <p>Бид бэйкери урлалын салбарт дэлхийн жишигт нийцсэн чанар, үйлчилгээг эрхэмлэгч, үнэ цэнийг бүтээгчид байна.</p>
                 </div>
             </div>
             <div class="goal">
-                <img src="https://cdn.greensoft.mn/uploads/users/45/images/276943842_1170415667036014_4891029772159346014_n%20(1).jpg" alt="Tous les Jours open" style="width: 30%; height: 30%;">
+                <img src="https://cdn.greensoft.mn/uploads/users/45/images/276943842_1170415667036014_4891029772159346014_n%20(1).jpg" alt="Tous les Jours open" >
                 <div class="goal-c">
                     <h2>Эрхэм зорилго</h2>
                     <p>Бид хүлээлтээс давсан бүтээгдэхүүний чанар, найрсаг зочломтгой үйлчилгээгээр таны гэр бүлийн үнэ цэнэтэй хором мөч бүрийг хуваалцана.</p>

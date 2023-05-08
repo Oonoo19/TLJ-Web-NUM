@@ -14,7 +14,6 @@
             }
             article{
                 display: flex;
-                justify-content: flex-start;
                 flex-direction: row;
                 background-color: #ffff;
                 margin: 10px;
@@ -22,8 +21,13 @@
             }
             article img {
                 margin: 10px;
+                width: 30%;
             }
-            article h2{
+            h2{
+                display: flex;
+                justify-content: center;
+            }
+            article h3{
                 color: var(--color-green);
             } 
             time{
@@ -37,7 +41,37 @@
                 text-decoration: none;
             }
             .post-card-info{
-                margin:  0 200px 0 30px;
+                margin:  0 10px 0 10px;
+            }
+            @media only screen and (max-width: 575px){
+                section{
+                margin: auto;
+                width: 100%;
+                padding-top: 50px;
+                }
+                article .btn{
+                    overflow: none;
+                    max-height: 0;
+                }
+                article img{
+                    width: 145px;
+                    height: auto;
+                }
+            }
+
+            @media only screen and (min-width: 575px) and (max-width: 990px){
+                section{
+                margin: auto;
+                width: 100%;
+                padding-top: 50px;
+                }
+                article{
+                    display: flex;
+                }
+                article img{
+                    width: 145px;
+                    height: auto;
+                }
             }
         </style>
     </head>
@@ -46,35 +80,36 @@
         <section class = "body-main-section">
             <h2>Мэдээ</h2>
             <article>
-                <img src="images/news-photo-2023-03-15.jpeg" alt="Tous les Jours open" style="width: 28%; height: 28%;">
+                <img src="images/news-photo-2023-03-15.jpeg" alt="Tous les Jours open" >
                 <div class="post-card-info">
-                    <h2>Шинэ Салат & Сэндвичээ танилцуулж байна</h2>
+                    <h3>Шинэ Салат & Сэндвичээ танилцуулж байна</h3>
                     <p>2023.03.15</p>
                     <p>Эрхэм хэрэглэгч та бүхэндээ шинээр худалдаанд гарч буй шинэ Салат & Сэндвичээ танилцуулж байна.</p>
                     <a class="btn" href="#">Дэлгэрэнгүй</a>
                 </div>
             </article>
             <article>
-                <img src="images/news-photo-2022-06-15.jpeg" alt="Tous les Jours open" style="width: 28%; height: 28%;">
+                <img src="images/news-photo-2022-06-15.jpeg" alt="Tous les Jours open" >
                 <div class="post-card-info">
-                    <h2>Сонгогдсон бялуунууд 30% хямдарлаа</h2>
+                    <h3>Сонгогдсон бялуунууд 30% хямдарлаа</h3>
                     <p>2022.06.15</p>
                     <p>Tous Les Jours салбаруудаaр сонгогдсон бялуунууд 30% хямдарлаа. Гэр бүлээрээ амралтын өдрөө ая тухтай,</p>
                     <a class="btn" href="#">Дэлгэрэнгүй</a>
-                </div></article>
+                </div>
+            </article>
             <article>
-                <img src="images/news-photoh-2022-06-15.jpeg" alt="Tous les Jours open" style="width: 28%; height: 28%;">
+                <img src="images/news-photoh-2022-06-15.jpeg" alt="Tous les Jours open" >
                 <div class="post-card-info">
-                    <h2>TOUS Les JOURS бейкери 5 НАС ХҮРЛЭЭ</h2>
+                    <h3>TOUS Les JOURS бейкери 5 НАС ХҮРЛЭЭ</h3>
                     <p>2022.06.15</p>
                     <p>TOUS Les JOURS /Тү Лэ Жүр/ гэдэг нь францаар "Өдөр бүр" гэсэн утгатай бөгөөд өдөр бүр шинэхэн хийсэн амтат</p>
                     <a class="btn" href="#">Дэлгэрэнгүй</a>
                 </div>
             </article>
             <article>
-                <img src="images/news-photo-2022-06-01.jpeg" alt="Tous les Jours open" style="width: 28%; height: 28%;">
+                <img src="images/news-photo-2022-06-01.jpeg" alt="Tous les Jours open" >
                 <div class="post-card-info">
-                    <h2>TOUS LES JOURS бейкери 2020 оны “ШИНЭ ЖИЛ”-ийн</h2>
+                    <h3>TOUS LES JOURS бейкери 2020 оны “ШИНЭ ЖИЛ”-ийн</h3>
                     <p>2022.06.01</p>
                     <p>Та бидний дуртай “TOUS les JOURS”-Тү Лэ Жүр бейкерийн 2020 оны “Шинэ жил”-ийн баярын бялууг</p>
                     <a class="btn" href="#">Дэлгэрэнгүй</a>
