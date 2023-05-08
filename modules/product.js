@@ -96,6 +96,7 @@ export default class Product extends HTMLElement {
         const addToCartButtons = this._shadowRoot.querySelectorAll('.add-to-cart'); 
         addToCartButtons.forEach(button => button.addEventListener('click', () => {
             const product = {
+                id: this.getAttribute('id'),
                 name: this.getAttribute('name'),
                 image: this.getAttribute('image'),
                 description: this.getAttribute('description'),
