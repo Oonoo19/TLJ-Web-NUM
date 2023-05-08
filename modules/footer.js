@@ -5,7 +5,7 @@ class Footer extends HTMLElement {
             <footer>
             <div class="footer-container">
             <div class="footer-column-container">
-            <div class="footer-column">
+            <div class="footer-column col1">
                 <nav class="social-media">
                     <a href="#" aria-label="Search for products">
                         <svg fill="#ffffff" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px" viewBox="0 0 512 512" xml:space="preserve">
@@ -76,7 +76,7 @@ class Footer extends HTMLElement {
                     </li>
                 </ul>
             </div>
-            <div class="footer-column">
+            <div class="footer-column col2">
                 <ul class="sitemap">
                     <li><a href="introduction.html" aria-label="See our bakery's introduction">Танилцуулга</a></li>
                     <li><a href="product.html" aria-label="See all the products">Бүтээгдэхүүн</a></li>
@@ -85,7 +85,7 @@ class Footer extends HTMLElement {
                     <li><a href="news.html" aria-label="News page">Мэдээ</a></li>
                 </ul>
             </div>
-            <div class="footer-column">
+            <div class="footer-column col3">
                 <ul class="additional-menu">
                     <li><a href="qa.html" aria-label="Common questions and answers">Түгээмэл асуулт хариулт</a></li>
                     <li><a href="feedback.html" aria-label="Give your feedback">Санал хүсэлт</a></li>
@@ -93,10 +93,12 @@ class Footer extends HTMLElement {
                     <li><a href="branches.html" aria-label="All of our branches' information">Салбарын мэдээлэл</a></li>
                 </ul>
             </div>
+            <div class="copy-right">
+                <p>©2023 - Артизан ХХК. БҮХ ЭРХ ХУУЛИАР ХАМГААЛАГДСАН</p>
+                <p>Вэб сайтыг: МУИС</p>
             </div>
-            <p class="copy-right">©2023 - Артизан ХХК. БҮХ ЭРХ ХУУЛИАР ХАМГААЛАГДСАН</p>
-            <p class="copy-right">Вэб сайтыг: МУИС</p>
             </div>
+        </div>
         </footer>
             `
     }
