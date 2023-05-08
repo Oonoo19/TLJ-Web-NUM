@@ -152,16 +152,16 @@
                         <h3>Хаягийн мэдээлэл</h3>
                         <div class="inf-input">
                             <label for="province">Аймаг/Хот:
-                                <input type="text" class="province" name="email">
+                                <input type="text" placeholder="Аймаг" name="province" id="province" required>
                             </label>
-                            <label for="fname">Дүүрэг хороо:
-                                <input type="text" class="fname" name="fname">
+                            <label for="б">Дүүрэг хороо:
+                                <input type="text" placeholder="Дүүрэг" name="email" id="email" required>
                             </label>
                             <label for="lname">Хороо:
-                                <input type="text" class="lname" name="lname">
+                                <input type="text" placeholder="И-мэйл" name="email" id="email" required>
                             </label>
                             <label for="lname">Орц тоот:
-                                <input type="text" class="lname" name="lname">
+                                <input type="text" placeholder="И-мэйл" name="email" id="email" required>
                             </label>
                             <div class="choose">
                                 <div class="save">
@@ -182,27 +182,26 @@
             </div>
         </section>
         <main-footer></main-footer>
+        <script>
+            // var li_elemet = document.querySelectorAll(".choose-type");
+            // var item_elements = document.querySelectorAll(".item");
+            // for (var i = 0; i < li_element.length; i++){
+            //     li_element[i].addEventListener("click", function(){
+            //         li_element.forEach(function (Li){
+            //             li.classList.remove ("active");
+            //         })
+            // this.classList.add("active");
+            // var li_value = this.getAttribute("data-li");
+            // if(aa = ".edit-pro"){
+            //     document.querySelector("." + aa).style.display = "block";
+            // }
+            // else if( aa = ".fav"){
+            //     document.querySelector("." + aa).style.display = "block";
+            // }
+            // else if(aa = "address-info")
+            //     document.querySelector("." + aa).style.display = "block";
+            // })};
+        </script>
+        <script type = "module" src="./index.js"></script>
     </body>
-    <script>
-        alert("test")
-        var li_elemet = document.querySelectorAll(".choose-type");
-        var item_elements = document.querySelectorAll(".item");
-        for (var i = 0; i < li_element.length; i++){
-            li_element[i].addEventListener("click", function(){
-                li_element.forEach(function (Li){
-                    li.classList.remove ("active");
-                })
-        this.classList.add("active");
-        var li_value = this.getAttribute("data-li");
-        if(aa = ".edit-pro"){
-            document.querySelector("." + aa).style.display = "block";
-        }
-        else if( aa = ".fav"){
-            document.querySelector("." + aa).style.display = "block";
-        }
-        else if(aa = "address-info")
-            document.querySelector("." + aa).style.display = "block";
-        })};
-    </script>
-    <script type = "module" src="./index.js"></script>
 </html>
