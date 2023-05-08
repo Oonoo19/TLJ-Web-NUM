@@ -8,25 +8,145 @@
         <link rel="stylesheet" href="../style.css">
         <script type = "module" src="./index.js"></script>
         <style>
+            :root{
+                --color-green: #0D4433;
+                --color-chocolate-brown: #7A4D4A;
+                --color-light-beige: #F9F4E9;
+                --color-beige: #CCBEA6;
+                --color-golden: #D3A45F;
+                --color-dark: #2E2F2E;
+                --color-default-border: 0.5px;
+                --color-white: #ffffff;
+                --color-gray: #7f827f;
+                --color-light-gray: #dadada;
+            }
             section{
                 margin: auto;
                 width: 70%;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                grid-row: auto;
+                gap: 10px;
+            }
+            .image-item{
+                grid-column: 1 / last;
+            }
+            .branch-item{
+                grid-column: 1 / 4;
+                position: relative;
+                text-align: center;
+            }
+            .upoint-item{
+                grid-column: 4 / last;
+            }
+            .job-item{
+                grid-column: 1 / 3;
+                position: relative;
+            }
+            .job-item p{
+                width: 40%;
+                color: var(--color-white);
+                position: absolute;
+                top: 0;
+                text-transform: uppercase;
+                right: 0;
+            }
+            .everyday-item{
+                grid-column: 3 / last;
+                position: relative;
+            }
+            .everyday-item p{
+                width: 20%;
+                position: absolute;
+                top: 20px;
+                margin: 20px 10px;
+                color: var(--color-white);
+                text-transform: uppercase;
+                right: 0;
+            }
+            .branch-child{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+            }
+            .branch-child p, .branch-child h3{
+                color: white;
+                margin: 10px 0;
+            }
+            button{
+                color: var(--color-white);
+                background-color: var(--color-golden);
+                border: none;
+                padding: 10px;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+            .shoppy-item img{
+                width: 50%;
+                animation-name: shoppy;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+            }
+            .shoppy-item{
+                grid-column: 1 / last;
+                overflow: hidden;
+                /* animation-name: shoppy;
+                animation-duration: 5s; */
+            }
+            @keyframes shoppy {
+                0%{
+                    margin-left: 0px;
+                }
+                50%{
+                    margin-left: 500px;
+                }
+                100%{
+                    margin-left: 0px;
+                }
+            }
+            @media only screen and (max-width: 575.98px) {
+                .branch-item{
+                    grid-column: 1 / last;
+                }
+                .upoint-item{
+                    grid-column: 1 / last;
+                }
+            }
+            @media only screen and (min-width: 576px) and (max-width: 991.98px){
+                section{
+                    width: 95%;
+                }
             }
         </style>
     </head>
     <body>
         <main-header></main-header>
         <section class="body-main-section">
-            <img src="../images/bigBread.jpeg" alt="" style="width: 100%; height: 100%;">
-            <div class="ad-container">
-                <a href="#"><img src="" alt=""></a>
-                <a href="#"><img src="" alt=""></a>
-                <a href="#"><img src="" alt=""></a>
-                <a href="#"><img src="" alt=""></a>
-                <a href="#"><img src="" alt=""></a>
-                <a href="#"><img src="" alt=""></a>
-                <a href="#"><img src="" alt=""></a>
-            </div>
+                <img class="image-item" src="../images/bigBread.jpeg" alt="" style="width: 100%; height: 100%;">
+                <div class="branch-item">
+                    <img src="../images/branch_main.jpeg" alt="" style="width: 100%; height: 100%;">
+                    <div class="branch-child">
+                        <h3>Салбарын мэдээлэл</h3>
+                        <p>Байршил болон цагийн хуваарь</p>
+                        <a href="branches.html"><button>Цааш үзэх</button></a>
+                    </div>
+                </div>
+                <a class="upoint-item" href="https://www.upoint.mn/"><img src="../images/upoint_main.jpeg" alt="" style="width: 100%; height: 100%;"></a>
+                <div class="job-item">
+                    <a href="humanres.html"><img src="../images/job_main.webp" alt="" style="width: 100%; height: 100%;"></a>
+                    <p>ажлын байрны мэдээлэл</p>
+                </div>
+                <div class="everyday-item">
+                    <a href="product.html"><img src="../images/bread_main.jpeg" alt="" style="width: 100%; height: 100%;"></a>
+                    <p>365 өдөр шинэ талх</p>
+                </div>
+            <a class="shoppy-item" href="https://shoppy.mn/"><img src="../images/shoppy_main.png" alt=""></a>
         </section>
         <main-footer></main-footer>
     </body>

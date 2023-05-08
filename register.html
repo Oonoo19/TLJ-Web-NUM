@@ -8,19 +8,22 @@
         <link rel="stylesheet" href="../style.css">
         <style>
             section{
+                padding-top: 2.5rem;
+            }
+            .container{
                 margin:auto;
                 width: 100%;
                 max-width: 800px;
                 display: flex;
                 flex-direction: row;
-                padding-top: 2.5rem;
             }
             .left-container{
                 width: 50%;
             }
             .left-container img{
-                max-width: 100%;
-                min-height: 100%;
+                width: 100%;
+                max-width: 400px;
+                height: 100%;
             }
             .right-container{
                 width: 50%;
@@ -42,7 +45,7 @@
             .register-box input:last-child {
                 margin:0px 0px 25px 0px;
             }
-            @media (max-width: 575.98px) {
+            @media (max-width: 810px) {
                 .register-box input{
                     padding: 0.4rem 0.6rem;
                     margin: 10px 0px;
@@ -50,7 +53,7 @@
                 .left-container img{
                     display: none;
                 }
-                section{
+                .container{
                     flex-direction: column;
                     align-items: center;
                 }
@@ -68,7 +71,7 @@
                 .register-box input {
                     padding: 0.5rem 0.8rem;
                     margin: 15px 0px;
-                }
+                } 
             }
 
         </style>
@@ -77,24 +80,26 @@
     <body>
         <main-header></main-header>
         <section class="body-main-section">
-            <article class="left-container">
-                <img src="../images/croissant.jpeg" alt="" >
-            </article>
-            <article class="right-container">
-                <div class="register-box">
-                        <h2>Бүртгүүлэх</h2>
-                        <form action="process-form.php" method="post">
-                            <input type="text" placeholder="Нэр" name="Lname" id="Lname" required>
-                            <input type="text" placeholder="Овог" name="Fname" id="Fname" required>
-                            <input type="text" placeholder="И-мэйл" name="email" id="email" required>
-                            <input type="tel" placeholder="Утас" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
-                            <input type="password" placeholder="Нууц үг" name="psw" id="psw" required>
-                            <input type="password" placeholder="Нууц үг давтах" name="psw-repeat" id="psw-repeat" required>
-                            <input type="submit" value="Бүртгүүлэх">
-                        </form>
-                </div>
-            </article>
+            <div class="container">
+                <article class="left-container">
+                    <img src="../images/croissant.jpeg" alt="" width="400" height="410">
+                </article>
+                <article class="right-container">
+                    <div class="register-box">
+                            <h2>Бүртгүүлэх</h2>
+                            <form action="process-form.php" method="post">
+                                <input type="text" placeholder="Нэр" name="Lname" id="Lname" required>
+                                <input type="text" placeholder="Овог" name="Fname" id="Fname" required>
+                                <input type="text" placeholder="И-мэйл" name="email" id="email" required>
+                                <input type="tel" placeholder="Утас" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                                <input type="password" placeholder="Нууц үг" name="psw" id="psw" required>
+                                <input type="password" placeholder="Нууц үг давтах" name="psw-repeat" id="psw-repeat" required>
+                                <input type="submit" value="Бүртгүүлэх">
+                            </form>
+                    </div>
+                </article>
+            </div>
         </section>
     </body>
-   
+
 </html>

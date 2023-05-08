@@ -84,7 +84,12 @@
             input[type=number]::-webkit-inner-spin-button {
                 opacity: 1;
                 color: var(--color-green);
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
             }
+            /* Firefox */
             input[type=number] {
                 -moz-appearance: textfield;
                 appearance: textfield;
@@ -157,6 +162,11 @@
             @media only screen and (min-width: 575px) and (max-width: 990px){
                 section{
                     width: 100%;
+                }
+            }
+            @media (max-width: 575.98px) {
+                section{
+                    flex-direction: column;
                 }
             }
         </style>
