@@ -48,14 +48,28 @@ export default class ProductInfo extends HTMLElement {
     render(products) {
         this._shadowRoot.innerHTML = `
         <style>
+            .product-list{
+              display: grid;
+              grid-template-columns: repeat(5, 1fr);
+              grid-template-rows: auto;
+              gap: 20px;
+              align-content: stretch;
+              justify-content: stretch;
+            }
             
         </style>
-        <ul class="product-list">
+        <div class="product-list">
+            <div>
+                <ul class = "category">
+                    <li><button id="bread">Талх</button></li>
+                    <li><button id="cake">Бялуу</button></li>
+                </ul>
+            </div>
         ${products.map(product => `
           <each-product name="${product.name}" description="${product.description}" 
           image="${product.image}" price="${product.price}" product="${JSON.stringify(product)}"></each-product>
           `).join('')}
-          </ul>
+          </div>
         `;
         const categoryButtons = document.querySelectorAll('.category');
         const eachProducts = this._shadowRoot.querySelectorAll('each-product');
