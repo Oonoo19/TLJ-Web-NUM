@@ -1,5 +1,3 @@
-import html from './utility.js'
-import Cart from './cart.js';
 export default class Product extends HTMLElement {
     constructor(){
         super();
