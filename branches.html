@@ -28,8 +28,8 @@
             width: 80%;
             margin: auto;
         }
-        section h2{
-            padding-left: 1rem;
+        .branch-title{
+            text-align: center;
         }
         .address-article{
             display: flex;
@@ -106,23 +106,13 @@
             .address-box {
                 cursor: pointer;
             }
-            section h2{
-                padding-left: 0rem;
-                text-align: center;
-            }
-        }
-        @media (max-width: 910px) {
-            section h2{
-                padding-left: 3rem;
-            }
         }
 
         @media screen and (min-width: 576px){
             .address-box:hover .img-text{
                 height: 50%;
                 cursor: pointer;
-            }
-            
+            } 
         }
     </style>
     <script type = "module" src="./index.js"></script>
@@ -130,7 +120,7 @@
     <body>
         <main-header></main-header>
         <section class="body-main-section">
-            <h2>Салбарын мэдээлэл</h2>
+            <h2 class="branch-title">Салбарын мэдээлэл</h2>
             <article class="address-article">
                 <section class="address-box">
                     <div class="image">
