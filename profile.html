@@ -12,6 +12,19 @@
                 width: 70%;
                 padding-top: 50px;
             }
+            .wrapper{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+            .wrapper .wrapper-left ul{
+                background-color: var(--color-white);
+                color: var(--color-green);
+                padding: 5px   15px;
+                margin: 10px 0;
+                width: 217px;
+            }
             .profile-p{
                 display: flex;
                 justify-content: center;
@@ -19,8 +32,7 @@
                 flex-direction: column;
                 background-color: var(--color-white);
                 width: 247px;
-                height: 274px;
-                
+                height: 274px;  
             }
             .profile-row{
                 display: flex;
@@ -30,29 +42,10 @@
                 flex-direction: column;
             }
             .profile-p img {
-                border-radius: 50px;
+                border-radius: 100%;
             }
-            .inf-input{
-                background-color: var(--color-white);
-                padding: 40px 70px;
-            }
-            .choose-type{
-                background-color: var(--color-white);
-                color: var(--color-green);
-                padding: 5px   15px;
-                margin: 10px 0;
-                width: 217px;
-            }
-            .main-part{
-                display: flex;
-                flex-direction: row;
-            }
-            .information{
-                margin: 0 0 0 0 ;
-                width: 60%;
-            }
-            .information h3{
-                color: var(--color-green);
+            ul{
+                list-style: none;
             }
             .sign-out{
                 display: flex;
@@ -65,6 +58,16 @@
             .sign-out a{
                 color: var(--color-white);
                 text-decoration: none;
+            }
+            .inf-input{
+                background-color: var(--color-white);
+                padding: 40px 70px;
+            }
+            .wrapper-right{
+                width: 55%;
+            }
+            .information h3{
+                color: var(--color-green);
             }
             .choose{
                 display: flex;
@@ -94,75 +97,112 @@
     <body>
         <main-header></main-header>
         <section class="body-main-section">
-            <div class="main-part">
-                <div class="profile-row">
-                    <div class="profile-p">
-                        <img src="images/profile_img.jpeg" alt="Profile" width="170" height="170">
-                        <h3>Мөнхцэцэг</h3>
-                    </div>
-                    <div class="choose-type">
-                        <p>Профайл засах</p>
-                        <p>Хаягийн мэдээлэл</p>
-                        <p>Favorites</p>
-                    </div>
-                    <div class="sign-out">
-                        <a href="index.html">Гарах</a>
-                    </div>
-                </div>
-                
-                <div class="information">
-                    <h3>Профайл засах</h3>
-                    <div class="inf-input">
-                        <label for="email">Email:
-                            <input type="email" class="email" name="email">
-                        </label>
-                        <label for="fname">Нэр:
-                            <input type="text" class="fname" name="fname">
-                        </label>
-                        <label for="lname">Овог:
-                            <input type="text" class="lname" name="lname">
-                        </label>
-                        <div class="choose">
-                            <div class="save">
-                                <p>Хадгалах</p>
-                            </div>
-                            <div class="return">
-                                <p>Буцах</p>
-                            </div>
+            <div class="wrapper">
+                <div class="wrapper-left">
+                    <div class="profile-row">
+                        <div class="profile-p">
+                            <img src="images/profile_img.jpeg" alt="Profile" width="170" height="170">
+                            <h3>Мөнхцэцэг</h3>
+                        </div>
+                        <ul>
+                            <li data-li="edit-pro" class="active">
+                                <p>Профайл засах</p>
+                            </li>
+                            <li data-li="address-info" class="active">
+                                <p>Хаягийн мэдээлэл</p>
+                            </li>
+                            <li data-li="fav" class="active">
+                                <p>Favorites</p>
+                            </li>
+                        </ul>
+                        <div class="sign-out">
+                            <a href="index.html">Гарах</a>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="information">
-                    <h3>Хаягийн мэдээлэл</h3>
-                    <div class="inf-input">
-                        <label for="province">Аймаг/Хот:
-                            <input type="text" class="province" name="email">
-                        </label>
-                        <label for="fname">Дүүрэг хороо:
-                            <input type="text" class="fname" name="fname"><br><br>
-                        </label>
-                        <label for="lname">Хороо:
-                            <input type="text" class="lname" name="lname"><br><br>
-                        </label>
-                        <label for="lname">Орц тоот:
-                            <input type="text" class="lname" name="lname"><br><br>
-                        </label>
+                <!-- <div class="wrapper-right">
+                    <div class="item edit-pro">
+                        <div class="information">
+                            <h3>Профайл засах</h3>
+                            <div class="inf-input">
+                                <label for="email">Email:
+                                    <input type="email" class="email" name="email">
+                                </label>
+                                <label for="fname">Нэр:
+                                    <input type="text" class="fname" name="fname">
+                                </label>
+                                <label for="lname">Овог:
+                                    <input type="text" class="lname" name="lname">
+                                </label>
+                                <div class="choose">
+                                    <div class="save">
+                                        <p>Хадгалах</p>
+                                    </div>
+                                    <div class="return">
+                                        <p>Буцах</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="information">
-                    <h3>Favorites</h3>
+                </div>  -->
+            
+                <div class="item address-info">
+                    <div class="information">
+                        <h3>Хаягийн мэдээлэл</h3>
+                        <div class="inf-input">
+                            <label for="province">Аймаг/Хот:
+                                <input type="text" class="province" name="email">
+                            </label>
+                            <label for="fname">Дүүрэг хороо:
+                                <input type="text" class="fname" name="fname">
+                            </label>
+                            <label for="lname">Хороо:
+                                <input type="text" class="lname" name="lname">
+                            </label>
+                            <label for="lname">Орц тоот:
+                                <input type="text" class="lname" name="lname">
+                            </label>
+                            <div class="choose">
+                                <div class="save">
+                                    <p>Хадгалах</p>
+                                </div>
+                                <div class="return">
+                                    <p>Буцах</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+                <!-- <div class="item fav">
+                        <div class="information">
+                            <h3>Favorites</h3>
+                        </div>
                 </div> -->
             </div>
         </section>
         <main-footer></main-footer>
     </body>
     <script>
-        const faqs = document.querySelectorAll(".information");
-        faqs.forEach(faq =>{
-            faq.addEventListener("click", ()=> {
-                faq.classList.toggle("active");
-            })
-        })
+        alert("test")
+        var li_elemet = document.querySelectorAll(".choose-type");
+        var item_elements = document.querySelectorAll(".item");
+        for (var i = 0; i < li_element.length; i++){
+            li_element[i].addEventListener("click", function(){
+                li_element.forEach(function (Li){
+                    li.classList.remove ("active");
+                })
+        this.classList.add("active");
+        var li_value = this.getAttribute("data-li");
+        if(aa = ".edit-pro"){
+            document.querySelector("." + aa).style.display = "block";
+        }
+        else if( aa = ".fav"){
+            document.querySelector("." + aa).style.display = "block";
+        }
+        else if(aa = "address-info")
+            document.querySelector("." + aa).style.display = "block";
+        })};
     </script>
     <script type = "module" src="./index.js"></script>
 </html>
