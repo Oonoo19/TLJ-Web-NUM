@@ -273,6 +273,9 @@ h2{
 }
 
 @media only screen and (max-width: 575.98px) { 
+    h2{
+        font-size: 18px;
+    }
     .hamburger{
         display: block;
         cursor: pointer;
@@ -292,6 +295,9 @@ h2{
     /*hides desktop logo*/
     .desktop-logo{
         display: none;
+    }
+    article p{
+        font-size: 16px;
     }
     header{
         background-color: var(--color-green);
