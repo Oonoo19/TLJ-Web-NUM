@@ -19,7 +19,7 @@
                 text-align: center;
             }
             .faq{
-                padding-bottom: 2px solid #fff ;
+                padding-bottom: 2px solid #fff;
                 margin: 5px;
                 padding:0 20px 0 20px;
                 cursor: pointer;
@@ -105,14 +105,14 @@
             </div>
         </section>
         <main-footer></main-footer>
-    </body>
-    <script>
-        const faqs = document.querySelectorAll(".faq");
-        faqs.forEach(faq =>{
-            faq.addEventListener("click", ()=> {
-                faq.classList.toggle("active");
+        <script>
+            const faqs = document.querySelectorAll(".faq");
+            faqs.forEach(faq =>{
+                faq.addEventListener("click", ()=> {
+                    faq.classList.toggle("active");
+                })
             })
-        })
-    </script>
-    <script type = "module" src="./index.js"></script>
+        </script>
+        <script type = "module" src="./index.js"></script>
+    </body>
 </html>
