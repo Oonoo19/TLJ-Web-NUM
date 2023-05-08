@@ -21,16 +21,25 @@ export default class Cart extends HTMLElement {
         </style>
         <ul class="product-list">
         ${cart.map(product => `
-          <each-product name="${product.name}" description="${product.description}" 
+          <each-product class="${product.id}" name="${product.name}" description="${product.description}" 
           image="${product.image}" price="${product.price}" product="${product}"></each-product>
+          <button class="remove" id="${product.id}">remove</button>
           `).join('')}
-          </ul>
+        </ul>
         `;
+        const removeButtons = document.querySelectorAll('.remove');
+        removeButtons.forEach(button => button.addEventListener('click', (event) => {
+            const id = event.target.id;
+            this.removeProduct(id);
+        }));
     }
-    addProduct(product){
-        console.log("clicked");
-        this.cart.push(product);
-        this.render(this.cart);
+    removeProduct(id){
+        console.log(id);
+        const myArray = JSON.parse(localStorage.getItem('cartData'));
+        const filteredArray = myArray.filter(product => product.id !== id);
+        localStorage.setItem('cartData', JSON.stringify(filteredArray));
+        const removedProduct = document.querySelector('.JSON.stringify(id)');
+        console.log(removedProduct);
     }
 
 }

@@ -66,7 +66,7 @@ export default class ProductInfo extends HTMLElement {
                 </ul>
             </div>
         ${products.map(product => `
-          <each-product name="${product.name}" description="${product.description}" 
+          <each-product id="${product.id}" name="${product.name}" description="${product.description}" 
           image="${product.image}" price="${product.price}" product="${JSON.stringify(product)}"></each-product>
           `).join('')}
           </div>
