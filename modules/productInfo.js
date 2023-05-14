@@ -103,7 +103,13 @@ export default class ProductInfo extends HTMLElement {
         const eachProducts = this._shadowRoot.querySelectorAll('each-product');
         console.log(eachProducts);
         eachProducts.forEach(product => product.addEventListener('add-to-cart', (event) =>{
-            this.cartProducts.push(JSON.parse(event.detail.product));
+            const thisProduct = this.cartProducts.find((each) => each.id == event.target.id);
+            if(thisProduct){
+              thisProduct.num = parseInt(thisProduct.num) + 1;
+              console.log(this.cartProducts);
+            }else{
+              this.cartProducts.push(JSON.parse(event.detail.product));
+            }
             const cartProductsJson = JSON.stringify(this.cartProducts);
             console.log(this.cartProducts);
             localStorage.setItem('cartData', cartProductsJson);

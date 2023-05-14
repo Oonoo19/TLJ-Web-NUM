@@ -169,7 +169,7 @@ export default class Cart extends HTMLElement {
                 <div class="right">
                     <h4>${product.name}</h4>
                     <form action="add-to-cart.php" method="post" class="form">
-                        <input type="number" id="product-quantity1" name="product-quantity" min="1" max="10" value="1">
+                        <input type="number" id="product-quantity1" name="product-quantity" min="1" max="10" value="${product.num}">
                         <label for="product-quantity1"><span class="price">Үнэ</span>${product.price}</label>
                     </form>
                 </div> 
@@ -203,7 +203,6 @@ export default class Cart extends HTMLElement {
             .reduce((accumulator, price) => {
                 return accumulator + price;
             }, 0);
-        console.log('here');
         totalAmountDOM.innerHTML = `<p>${totalAmount}</p>`;
     }
     removeProduct(id){
