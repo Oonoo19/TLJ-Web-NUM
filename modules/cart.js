@@ -176,11 +176,11 @@ export default class Cart extends HTMLElement {
                 <button class="remove" id="${product.id}">remove</button>
             </div>`).join('')}
         `;
+        this.calculateTotalAmount(cart);
         const removeButtons = document.querySelectorAll('.remove');
         removeButtons.forEach(button => button.addEventListener('click', (event) => {
             const id = event.target.id;
             const removedProduct = button.parentNode;
-            console.log(removedProduct);
             this.removeProduct(id);
             removedProduct.remove();
         }));
@@ -192,13 +192,26 @@ export default class Cart extends HTMLElement {
             children.forEach((child) => {
                 child.remove();
             });
+            this.calculateTotalAmount([]);
         })
+    }
+    calculateTotalAmount(cart){
+        const totalAmountContainer = document.querySelector('.cal-out');
+        const totalAmountDOM = totalAmountContainer.querySelector('.total');
+        const totalAmount = cart
+            .map((product) => parseInt(product.price))
+            .reduce((accumulator, price) => {
+                return accumulator + price;
+            }, 0);
+        console.log('here');
+        totalAmountDOM.innerHTML = `<p>${totalAmount}</p>`;
     }
     removeProduct(id){
         console.log(id);
         const myArray = JSON.parse(localStorage.getItem('cartData'));
         const filteredArray = myArray.filter(product => product.id !== id);
         localStorage.setItem('cartData', JSON.stringify(filteredArray));
+        this.calculateTotalAmount(filteredArray);
     }
     removeAll(){
         localStorage.removeItem('cartData');

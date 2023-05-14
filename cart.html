@@ -9,6 +9,18 @@
         <script type = "module" src="./modules/cart.js"></script>
         <script type = "module" src="./modules/product.js"></script>
         <style>
+            :root{
+                --color-green: #0D4433;
+                --color-chocolate-brown: #7A4D4A;
+                --color-light-beige: #F9F4E9;
+                --color-beige: #CCBEA6;
+                --color-golden: #D3A45F;
+                --color-dark: #2E2F2E;
+                --color-default-border: 0.5px;
+                --color-white: #ffffff;
+                --color-gray: #7f827f;
+                --color-light-gray: #dadada;
+            }
             section{
                 display: flex;
                 flex-direction: row;
@@ -16,144 +28,7 @@
                 width: 70%;
                 margin: 150px auto;
             }
-            .cart-container{
-                display: grid;
-                grid-template-columns: 1fr;
-
-            }
-            .left-container{
-                flex-direction: column;
-                flex: 1.5;
-                margin: 10px;
-            }
-            .right-container{
-                flex-direction: column;
-                flex: 1;
-                margin: 10px;
-            }
-            .cart-header:nth-child(1){
-                display: flex;
-                align-items: center;
-                flex-direction: row;
-                justify-content: space-between;
-            }
-            .cart-box{
-                /*grid-template-columns: repeat(auto-fit,minmax(200px,1fr)) */
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                background-color: #ffffff;
-                margin: 0px;
-                border-bottom:1px solid #CCBEA6;
-            }
-            .left{
-                flex: 0.5;
-                flex-direction: column;
-            }
-            .right{
-                flex: 2;
-            }
-            .cart-btn:nth-child(2){
-                width: 120px;
-                height: 25px;
-                border-color: var(--color-white);
-                background-color: var(--color-white);
-                cursor: pointer;
-                color: var(--color-green);
-            }
-            .cart-btn:nth-child(1){
-                min-width: 100%;
-                height: 40px;
-                background-color:var(--color-green);
-                color: #fff1ee;
-                cursor: pointer;
-                border-color: var(--color-green);
-            }
-            #product-quantity1{
-                border: 1px solid var(--color-green);
-                max-width: 80px;
-                padding: 2px;
-                text-align: center;
-                font-size: 18px;
-            }
-            #product-quantity2{
-                border: 1px solid var(--color-green);
-                max-width: 80px;
-                padding: 2px;
-                text-align: center;
-                font-size: 18px;
-            }
-            /* Show spin box arrows of number input field */
-         /* Show spin box arrows of number input field */
-            input[type=number]::-webkit-outer-spin-button,
-            input[type=number]::-webkit-inner-spin-button {
-                opacity: 1;
-                color: var(--color-green);
-            }
-            input::-webkit-outer-spin-button,
-            input::-webkit-inner-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-            }
-            /* Firefox */
-            input[type=number] {
-                -moz-appearance: textfield;
-                appearance: textfield;
-                color: var(--color-green);
-            }
-            .right h4{
-                padding: 0px 0px 10px 0px;
-                border-bottom: 1px solid #CCBEA6;
-            }
-            .price{
-                font-size: 0.8rem;
-                color: var(--color-green);
-            }
-            .cart-info{
-                display: flex;
-                flex-direction: column;
-                background-color: #ffffff;
-                padding:10px 10px;
-                margin-bottom: 20px;
-            }
-            .cal_out{
-                flex-direction: column;
-            }
-            .calculate_sec{
-                display: flex;
-                align-items: center;
-                flex-direction: row;
-                border-bottom: 1px solid #CCBEA6;
-            }
-            .total p{
-                margin:10px 0px 0px 0px;
-                text-align: end;
-                color: #0D4433;
-            }
-            .calculate_sec p {
-                flex: 1;
-                font-size: 0.8rem;
-                color: #0D4433;
-            }
-            .cart-info h4{
-                margin: 0px;
-                padding-bottom: 10px;
-                color: #0D4433;
-            }
-            .product-price{
-                color: #0D4433;
-            }
-            .calculate_sec .count{
-                border: 1px solid var(--color-beige);
-                border-radius: 25%;
-                padding: 2px 2px ;
-                text-align: center;
-                color: var(--color-beige);
-            }
-            #form{
-                display: inline;
-                flex-direction: row;
-            }
+            
             @media only screen and (max-width: 575px){
                 section{
                     width: 90%;
@@ -193,25 +68,35 @@
 
             <article class="right-container">
                 <div class="cart-header">
-                    <h3>Төлбөрийн мэдээлэл</h3>
+                    <h2>Төлбөрийн мэдээлэл</h2>
                 </div>
-                
                 <div class="cart-info">
                     <div>
                         <h4>Бүтээгдэхүүн</h4>
                     </div>
-                    <div class="cal_out">
-                        <div class="calculate_sec">
-                            <p>Whole corn bread</p>
-                            <p><span class="count">&times;1</span></p>
-                            <span class="product-price">3700</span>
-                        </div>
-    
-                        <div class="calculate_sec">
-                            <p>Read bean bun bread</p>
-                            <p><span class="count">&times;1</span></p>
-                            <span class="product-price">3700</span>
-                        </div>
+                    <div class="cal-out">
+                        <template id="cart-template">
+                            <style>
+                                .calculate-products{
+                                    display: grid;
+                                    grid-template-columns: 2fr 1fr 1fr;
+                                }
+                                .calculate-products h3{
+                                    color: var(--color-green);
+                                }
+                                .quantity{
+                                    color: var(--color-green);
+                                }
+                            </style>
+                            <div class="calculate-products">
+                                <h3><slot name="title"></slot></h3>
+                                <p class="quantity"><slot name="quantity"></slot></p>
+                                <p><slot name="price"></slot></p>
+                            </div>
+                        </template>
+                        <cart-template>
+                            <span></span>
+                        </cart-template>
     
                         <div class="total"><p>7400</p></div>
                     </div>
