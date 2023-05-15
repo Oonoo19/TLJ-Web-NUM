@@ -19,7 +19,7 @@ class CartTemplate extends HTMLElement {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
             border-bottom: 1px var(--color-beige) solid;
-
+            color: var(--color-green);
           }
           .calculate-products h3 {
             color: var(--color-green);
