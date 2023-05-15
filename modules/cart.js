@@ -1,4 +1,3 @@
-import html from './utility.js'
 export default class Cart extends HTMLElement {
     constructor(cart){
         super();
@@ -8,7 +7,6 @@ export default class Cart extends HTMLElement {
         }else{
             this.cart = [];
         }
-        console.log(this.cart);
     }
     connectedCallback() {
         this.render(this.cart);
@@ -34,15 +32,10 @@ export default class Cart extends HTMLElement {
         .right{
             flex: 2;
         }
-        form{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
         .detail{
             margin-right: 20px;
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr;
             align-items: center;
             justify-content: center;
         }
@@ -62,7 +55,7 @@ export default class Cart extends HTMLElement {
             cursor: pointer;
             border-color: var(--color-green);
         }
-        #product-quantity1{
+        .product-quantity1{
             border: 1px solid var(--color-green);
             max-width: 80px;
             padding: 2px;
@@ -111,10 +104,10 @@ export default class Cart extends HTMLElement {
             font-size: 0.8rem;
             color: #0D4433;
         }
-        .cart-info h4{
+        h4{
             margin: 0px;
             padding-bottom: 10px;
-            color: #0D4433;
+            color: var(--color-green);
         }
         .product-price{
             color: #0D4433;
@@ -153,20 +146,29 @@ export default class Cart extends HTMLElement {
                 <div class="right">
                     <h4>${product.name}</h4>
                     <div class="detail">
-                        <form action="add-to-cart.php" method="post" class="form">
-                            <input type="number" id="product-quantity1" name="product-quantity" min="1" max="10" value="${product.num}">
-                            <span class="price">Үнэ</span><label class="price-text" for="product-quantity1">${product.price}</label>
-                        </form>
+                        <input type="number" id="${product.id}" class="product-quantity1" name="product-quantity" min="1" max="10" value="${product.num}">
+                        <label class="price-text" for="${product.id}"><span class="price">Үнэ </span>${parseInt(product.num) * parseInt(product.price)}</label>
                         <button class="remove" id="${product.id}">Устгах</button>
                     </div>
                 </div> 
             </div>`).join('')}
         `;
+        const inputElement = document.querySelectorAll(".product-quantity1");
+        inputElement.forEach(product => product.addEventListener("change", (event) => {
+            let value = event.target.value;
+            const changedCart = this.cart.find((each) => each.id == event.target.id);
+            changedCart.num = value;
+            console.log(changedCart.num);
+            localStorage.setItem('cartData', JSON.stringify(this.cart));
+            this.calculateTotalAmount(this.cart);
+            this.render(this.cart);
+        }));
+
         this.calculateTotalAmount(cart);
         const removeButtons = document.querySelectorAll('.remove');
         removeButtons.forEach(button => button.addEventListener('click', (event) => {
             const id = event.target.id;
-            const removedProduct = button.parentNode;
+            const removedProduct = button.parentNode.parentNode.parentNode;
             this.removeProduct(id);
             removedProduct.remove();
         }));
@@ -179,26 +181,26 @@ export default class Cart extends HTMLElement {
                 child.remove();
             });
             this.calculateTotalAmount([]);
-        })
+        });
     }
     calculateTotalAmount(cart){
         const totalAmountContainer = document.querySelector('.cal-out');
-        const totalAmountDOM = totalAmountContainer.querySelector('.total');
-        console.log(totalAmountDOM);
-        const totalAmount = cart
-            .map((product) => parseInt(product.price))
+        const multipliedCart = cart.map((product) => (parseInt(product.price) * parseInt(product.num)));
+        console.log(multipliedCart);
+        const totalAmount = multipliedCart
             .reduce((accumulator, price) => {
                 return accumulator + price;
             }, 0);
-        totalAmountDOM.innerHTML = `<p>${totalAmount}</p>`;
-        console.log(totalAmountContainer);
-        totalAmountContainer.insertAdjacentHTML("afterbegin", `
+        totalAmountContainer.innerHTML = `
         ${cart.map(product => `
         <cart-template>
             <h3 slot="title">${product.name}</h3>
             <p slot="quantity">${product.num}</p>
-            <p slot="price">${product.price}</p>
+            <p slot="price">${parseInt(product.num) * parseInt(product.price)}</p>
         </cart-template>`).join('')}
+        `;
+        totalAmountContainer.insertAdjacentHTML("beforeend", `
+        <div class="total"><p>${totalAmount}</p></div>
         `);
     }
     removeProduct(id){
@@ -207,6 +209,7 @@ export default class Cart extends HTMLElement {
         const filteredArray = myArray.filter(product => product.id !== id);
         localStorage.setItem('cartData', JSON.stringify(filteredArray));
         this.calculateTotalAmount(filteredArray);
+        this.cart = filteredArray;
     }
     removeAll(){
         localStorage.removeItem('cartData');
