@@ -10,15 +10,23 @@ export default class ProductInfo extends HTMLElement {
       }else{
           this.cartProducts = [];
       }
-      //localStorage.removeItem('cartData');
+      const currentUrl = window.location.href;
+      this.checkUrl(currentUrl);
     }
-  
+    
     async connectedCallback() {
       const products = await this.fetchProducts();
       this._products = products;
       this.render(products);
     }
   
+    checkUrl(currentUrl){
+      const parts = currentUrl.split("/"); 
+      console.log(parts);
+      if(this.part[4]){
+        this.category = parts[4];
+      }
+    }
     onCategoryChanged(oldValue, newValue) {
       if (oldValue !== newValue) {
         this.render(this.filterProducts(newValue));
@@ -38,7 +46,8 @@ export default class ProductInfo extends HTMLElement {
     filterProducts(category) {
       const products = this._products;
   
-      if (category === 'all') {
+      if (category == 'all') {
+        
         return products;
       }
   
@@ -119,6 +128,7 @@ export default class ProductInfo extends HTMLElement {
             const category = event.target.id;
             window.history.pushState({ category }, category, `?category=${category}`);
             this.onCategoryChanged(this.category, event.target.id);
+            this.category = category;
         }));
         
     
