@@ -192,14 +192,14 @@ export default class Cart extends HTMLElement {
             }, 0);
         totalAmountDOM.innerHTML = `<p>${totalAmount}</p>`;
         console.log(totalAmountContainer);
-        totalAmountContainer.innerHTML = `
+        totalAmountContainer.insertAdjacentHTML("afterbegin", `
         ${cart.map(product => `
         <cart-template>
             <h3 slot="title">${product.name}</h3>
             <p slot="quantity">${product.num}</p>
             <p slot="price">${product.price}</p>
         </cart-template>`).join('')}
-        `;
+        `);
     }
     removeProduct(id){
         console.log(id);
