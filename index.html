@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="description" content="Tous les Jours bakery products, order product, cake, bread">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" type = "text/css" href="../style.css">
         <script type = "module" src="./index.js"></script>
         <style>
             :root{
@@ -79,18 +79,18 @@
                 color: white;
                 margin: 10px 0;
             }
-            button{
+            .branch-item a{
                 color: var(--color-white);
                 background-color: var(--color-golden);
                 border: none;
-                padding: 10px;
+                padding: 10px 20px;
                 margin-top: 10px;
-                cursor: pointer;
+                text-decoration: none;
             }
             .shoppy-item img{
                 width: 50%;
                 animation-name: shoppy;
-                animation-duration: 5s;
+                animation-duration: 8s;
                 animation-iteration-count: infinite;
             }
             .shoppy-item{
@@ -117,6 +117,9 @@
                 .upoint-item{
                     grid-column: 1 / last;
                 }
+                section{
+                    width: 95%;
+                }
             }
             @media only screen and (min-width: 576px) and (max-width: 991.98px){
                 section{
@@ -134,7 +137,7 @@
                     <div class="branch-child">
                         <h3>Салбарын мэдээлэл</h3>
                         <p>Байршил болон цагийн хуваарь</p>
-                        <a href="branches.html"><button>Цааш үзэх</button></a>
+                        <a href="branches.html">Цааш үзэх</a>
                     </div>
                 </div>
                 <a class="upoint-item" href="https://www.upoint.mn/"><img src="../images/upoint_main.jpeg" alt="" style="width: 100%; height: 100%;"></a>

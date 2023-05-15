@@ -169,18 +169,18 @@ export default class Cart extends HTMLElement {
                 <div class="right">
                     <h4>${product.name}</h4>
                     <form action="add-to-cart.php" method="post" class="form">
-                        <input type="number" id="product-quantity1" name="product-quantity" min="1" max="10" value="1">
+                        <input type="number" id="product-quantity1" name="product-quantity" min="1" max="10" value="${product.num}">
                         <label for="product-quantity1"><span class="price">Үнэ</span>${product.price}</label>
                     </form>
                 </div> 
                 <button class="remove" id="${product.id}">remove</button>
             </div>`).join('')}
         `;
+        this.calculateTotalAmount(cart);
         const removeButtons = document.querySelectorAll('.remove');
         removeButtons.forEach(button => button.addEventListener('click', (event) => {
             const id = event.target.id;
             const removedProduct = button.parentNode;
-            console.log(removedProduct);
             this.removeProduct(id);
             removedProduct.remove();
         }));
@@ -192,13 +192,25 @@ export default class Cart extends HTMLElement {
             children.forEach((child) => {
                 child.remove();
             });
+            this.calculateTotalAmount([]);
         })
+    }
+    calculateTotalAmount(cart){
+        const totalAmountContainer = document.querySelector('.cal-out');
+        const totalAmountDOM = totalAmountContainer.querySelector('.total');
+        const totalAmount = cart
+            .map((product) => parseInt(product.price))
+            .reduce((accumulator, price) => {
+                return accumulator + price;
+            }, 0);
+        totalAmountDOM.innerHTML = `<p>${totalAmount}</p>`;
     }
     removeProduct(id){
         console.log(id);
         const myArray = JSON.parse(localStorage.getItem('cartData'));
         const filteredArray = myArray.filter(product => product.id !== id);
         localStorage.setItem('cartData', JSON.stringify(filteredArray));
+        this.calculateTotalAmount(filteredArray);
     }
     removeAll(){
         localStorage.removeItem('cartData');

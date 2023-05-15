@@ -12,7 +12,7 @@
 
     --default-font:'Mulish', sans-serif;
     --menu-font-size:14px;
-    --default-font-size: 13px;
+    --default-font-size: 12px;
     --default-semi-bold: 600;
     --default-button-font-size: 16px;
     --font-weight-normal: 500;
@@ -20,8 +20,8 @@
     --font-weight-bold:700;
     --round-menu-size-desktop: 32px;
     --round-menu-size-mobile: 23px;
-    --submenu-font-size-desktop: 16px;
-    --submenu-font-size-medium: 14px;
+    --submenu-font-size-desktop: 14px;
+    --submenu-font-size-medium: 12px;
     --footer-font-size: 14px;
 
     --desktop-padding-side:240px;
@@ -158,6 +158,7 @@ set margin and width to center 70%*/
     text-decoration: none;
     color: var(--color-golden);
     font-size: var(--submenu-font-size-desktop);
+    text-transform: uppercase;
 }
 .hidden{
     height: 0;
@@ -270,6 +271,8 @@ form{
 
 h2{
     color: var(--color-green);
+    text-transform: uppercase;
+    text-align: center;
 }
 
 @media only screen and (max-width: 575.98px) { 

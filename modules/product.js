@@ -18,31 +18,19 @@ export default class Product extends HTMLElement {
                 --color-gray: #7f827f;
                 --color-light-gray: #dadada;
             }
-            .product {
-                display: grid;
-                grid-template-columns: repeat(5, 1fr);
-                grid-template-rows: auto
-                gap: 20px;
-            }
             .product-box{
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
                 max-width: 250px;
-                height: auto;
                 margin: auto;
                 text-align: center;
                 position: relative;
-                background-color: #ffffff;
-                border-radius: 5%;
+                background-color: var(--color-white);
                 cursor: pointer;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
             }
             .fav{
-                width: 20px;
+                width: 30px;
                 position: absolute;
-                top: 1rem;
-                right: 1rem;
+                top: 10px;
+                right: 10px;
             }
             .product-box button {
                 border: none;
@@ -53,28 +41,35 @@ export default class Product extends HTMLElement {
                 text-align: center;
                 cursor: pointer;
                 width: 100%;
-                font-size: 18px;
+                font-size: var(--default-button-font-size);
                 transition: ease-out 0.5s;
             }
             .product-box h2{
-                margin: 0;
                 padding-top: 2rem;
+                margin: 0 10px;
                 color: var(--color-green);
+                font-weight: var(--font-weight-normal);
+                font-size: var(--menu-font-size);
+                text-transform: uppercase;
+                border-top: 1px var(--color-beige) solid;
             }
             .product-box button:hover {
                 opacity: 0.7;
             }
             p.hidden-desc{
                 display: none;
-                width: 100%;
+                width: 90%;
             }
             .product-box:hover .hidden-desc{
                 display: block;
                 position: absolute;
-                left: 0px;
-                top: 80px;
+                top: 40px;
+                left: 50%;
+                transform: translate(-50%, 0);
                 text-align: center;
-                color: #0D4433;
+                color: var(--color-green);
+                font-size: var(--default-font-size);
+                font-weight: var(--font-weight-normal);
             }
             .product-box:hover img{
                 opacity: 0.1;
@@ -84,10 +79,10 @@ export default class Product extends HTMLElement {
             }
             </style>
             <div class="product-box">
-                <h2>${this.getAttribute('name')}</h2>
-                <svg class="fav" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
+                <svg class = "fav"  viewBox="-4.8 -4.8 33.60 33.60" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-4.8" y="-4.8" width="33.60" height="33.60" rx="16.8" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" stroke="#0D4433" stroke-width="2"></path> </g></svg>
                 <img src="${this.getAttribute('image')}" alt="${this.getAttribute('name')}" style="height:150px ; width: 200px;">
                 <p class="hidden-desc">${this.getAttribute('description')}</p>
+                <h2>${this.getAttribute('name')}</h2>
                 <p>Үнэ: ${this.getAttribute('price')}</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
