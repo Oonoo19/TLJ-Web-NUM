@@ -184,12 +184,22 @@ export default class Cart extends HTMLElement {
     calculateTotalAmount(cart){
         const totalAmountContainer = document.querySelector('.cal-out');
         const totalAmountDOM = totalAmountContainer.querySelector('.total');
+        console.log(totalAmountDOM);
         const totalAmount = cart
             .map((product) => parseInt(product.price))
             .reduce((accumulator, price) => {
                 return accumulator + price;
             }, 0);
         totalAmountDOM.innerHTML = `<p>${totalAmount}</p>`;
+        console.log(totalAmountContainer);
+        totalAmountContainer.innerHTML = `
+        ${cart.map(product => `
+        <cart-template>
+            <h3 slot="title">${product.name}</h3>
+            <p slot="quantity">${product.num}</p>
+            <p slot="price">${product.price}</p>
+        </cart-template>`).join('')}
+        `;
     }
     removeProduct(id){
         console.log(id);
