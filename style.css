@@ -9,6 +9,7 @@
     --color-white: #ffffff;
     --color-gray: #7f827f;
     --color-light-gray: #dadada;
+    --color-dark-mode-background: #272625;
 
     --default-font:'Mulish', sans-serif;
     --menu-font-size:14px;
@@ -433,6 +434,22 @@ and (max-width: 991.98px) {
 /* medium devices*/
 
 /*dark light mode*/
-@media (prefers-color-scheme: dark){
-    
-}
+@media (prefers-color-scheme: dark) {
+    body {
+      background-color: var(--color-dark-mode-background);
+      color: white;
+    }
+    .mobile-logo{
+        display: block;
+        width: 85%;
+        height: 85%;
+        margin-left: 10px;
+    }
+    /*hides desktop logo*/
+    .desktop-logo{
+        display: none;
+    }
+    header{
+        background-color: var(--color-dark-mode-background);
+    }
+  }

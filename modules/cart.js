@@ -17,22 +17,6 @@ export default class Cart extends HTMLElement {
     render(cart) {
         this.innerHTML = `
         <style>
-        .left-container{
-            flex-direction: column;
-            flex: 1.5;
-            margin: 10px;
-        }
-        .right-container{
-            flex-direction: column;
-            flex: 1;
-            margin: 10px;
-        }
-        .cart-header:nth-child(1){
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-            justify-content: space-between;
-        }
         .cart-box{
             /*grid-template-columns: repeat(auto-fit,minmax(200px,1fr)) */
             display: flex;
@@ -40,6 +24,7 @@ export default class Cart extends HTMLElement {
             align-items: center;
             background-color: #ffffff;
             margin: 0px;
+            padding: 10px 0;
             border-bottom:1px solid #CCBEA6;
         }
         .left{
@@ -48,6 +33,18 @@ export default class Cart extends HTMLElement {
         }
         .right{
             flex: 2;
+        }
+        form{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .detail{
+            margin-right: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            align-items: center;
+            justify-content: center;
         }
         .cart-btn:nth-child(2){
             width: 120px;
@@ -72,38 +69,21 @@ export default class Cart extends HTMLElement {
             text-align: center;
             font-size: 18px;
         }
-        #product-quantity2{
-            border: 1px solid var(--color-green);
-            max-width: 80px;
-            padding: 2px;
-            text-align: center;
-            font-size: 18px;
-        }
-        /* Show spin box arrows of number input field */
-     /* Show spin box arrows of number input field */
-        input[type=number]::-webkit-outer-spin-button,
-        input[type=number]::-webkit-inner-spin-button {
-            opacity: 1;
+        .price-text{
             color: var(--color-green);
         }
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-        /* Firefox */
-        input[type=number] {
-            -moz-appearance: textfield;
-            appearance: textfield;
+        input{
             color: var(--color-green);
         }
         .right h4{
-            padding: 0px 0px 10px 0px;
+            margin: 0 20px 0 0;
+            padding: 10px;
             border-bottom: 1px solid #CCBEA6;
         }
         .price{
             font-size: 0.8rem;
             color: var(--color-green);
+            justify-self: end;
         }
         .cart-info{
             display: flex;
@@ -139,16 +119,20 @@ export default class Cart extends HTMLElement {
         .product-price{
             color: #0D4433;
         }
+        .remove{
+            background-color: var(--color-green);
+            border: none;
+            width: 100px;
+            color: var(--color-white);
+            padding: 5px 0;
+            justify-self: end;
+        }
         .calculate_sec .count{
             border: 1px solid var(--color-beige);
             border-radius: 25%;
             padding: 2px 2px ;
             text-align: center;
             color: var(--color-beige);
-        }
-        #form{
-            display: inline;
-            flex-direction: row;
         }
         @media only screen and (max-width: 575px){
             section{
@@ -168,12 +152,14 @@ export default class Cart extends HTMLElement {
                 </div>
                 <div class="right">
                     <h4>${product.name}</h4>
-                    <form action="add-to-cart.php" method="post" class="form">
-                        <input type="number" id="product-quantity1" name="product-quantity" min="1" max="10" value="${product.num}">
-                        <label for="product-quantity1"><span class="price">Үнэ</span>${product.price}</label>
-                    </form>
+                    <div class="detail">
+                        <form action="add-to-cart.php" method="post" class="form">
+                            <input type="number" id="product-quantity1" name="product-quantity" min="1" max="10" value="${product.num}">
+                            <span class="price">Үнэ</span><label class="price-text" for="product-quantity1">${product.price}</label>
+                        </form>
+                        <button class="remove" id="${product.id}">Устгах</button>
+                    </div>
                 </div> 
-                <button class="remove" id="${product.id}">remove</button>
             </div>`).join('')}
         `;
         this.calculateTotalAmount(cart);

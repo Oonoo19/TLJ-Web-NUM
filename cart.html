@@ -28,6 +28,22 @@
                 width: 70%;
                 margin: 150px auto;
             }
+            .left-container{
+                flex-direction: column;
+                flex: 1.5;
+                margin: 10px;
+            }
+            .right-container{
+                flex-direction: column;
+                flex: 1;
+                margin: 10px;
+            }
+            .cart-header:nth-child(1){
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: space-between;
+            }
             
             @media only screen and (max-width: 575px){
                 section{
@@ -97,7 +113,6 @@
                         <cart-template>
                             <span></span>
                         </cart-template>
-    
                         <div class="total"><p>7400</p></div>
                     </div>
                 </div>
