@@ -17,6 +17,7 @@ export default class Product extends HTMLElement {
                 --color-white: #ffffff;
                 --color-gray: #7f827f;
                 --color-light-gray: #dadada;
+                --color-dark-mode-background: #272625;
             }
             .product-box{
                 max-width: 250px;
@@ -29,8 +30,9 @@ export default class Product extends HTMLElement {
             .fav{
                 width: 30px;
                 position: absolute;
-                top: 10px;
+                top: 220px;
                 right: 10px;
+                cursor: pointer;
             }
             .product-box button {
                 border: none;
@@ -76,10 +78,17 @@ export default class Product extends HTMLElement {
             }
             .product-box img{
                 transition: ease-in 0.3s;
+                border: 1px var(--color-beige) solid;
+            }
+            @media (prefers-color-scheme: dark) {
+                .product-box{
+                    background-color: var(--color-dark);
+                }
             }
             </style>
             <div class="product-box">
-                <svg class = "fav"  viewBox="-4.8 -4.8 33.60 33.60" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-4.8" y="-4.8" width="33.60" height="33.60" rx="16.8" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" stroke="#0D4433" stroke-width="2"></path> </g></svg>
+                <svg class="fav" fill="#D3A45F" width="24px" height="24px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8.999 3.567c0.98 0 2.753 0.469 5.628 3.301l1.425 1.403 1.404-1.426c1.996-2.028 4.12-3.288 5.543-3.288 1.919 0 3.432 0.656 4.907 2.128 1.39 1.386 2.156 3.23 2.156 5.191 0.001 1.962-0.764 3.807-2.169 5.209-0.114 0.116-6.156 6.634-11.218 12.097-0.238 0.227-0.511 0.26-0.656 0.26-0.143 0-0.412-0.032-0.65-0.253-1.233-1.372-10.174-11.313-11.213-12.351-1.391-1.388-2.157-3.233-2.157-5.194s0.766-3.804 2.158-5.192c1.353-1.352 2.937-1.885 4.842-1.885zM8.999 1.567c-2.392 0-4.5 0.715-6.255 2.469-3.659 3.649-3.659 9.566 0 13.217 1.045 1.045 11.183 12.323 11.183 12.323 0.578 0.578 1.336 0.865 2.093 0.865s1.512-0.287 2.091-0.865c0 0 11.090-11.97 11.208-12.089 3.657-3.652 3.657-9.57 0-13.219-1.816-1.813-3.845-2.712-6.319-2.712-2.364 0-5 1.885-6.969 3.885-2.031-2-4.585-3.874-7.031-3.874v0z"></path> </g></svg>
+                
                 <img src="${this.getAttribute('image')}" alt="${this.getAttribute('name')}" style="height:150px ; width: 200px;">
                 <p class="hidden-desc">${this.getAttribute('description')}</p>
                 <h2>${this.getAttribute('name')}</h2>
@@ -87,7 +96,10 @@ export default class Product extends HTMLElement {
                 <button class="add-to-cart">Add to Cart</button>
             </div>
         `;
-        
+        const favIcon = this._shadowRoot.querySelectorAll('.fav');
+        favIcon.addEventListener('click', () => {
+
+        })
         const addToCartButtons = this._shadowRoot.querySelectorAll('.add-to-cart'); 
         addToCartButtons.forEach(button => button.addEventListener('click', () => {
             const product = {
