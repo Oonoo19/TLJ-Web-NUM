@@ -31,9 +31,6 @@
                 width: 70%;
                 margin: 50px auto;
             }
-            cart-template p{
-                color: #0D4433;
-            }
             .left-container{
                 flex-direction: column;
                 flex: 1.5;
@@ -80,77 +77,26 @@
         <section class="body-main-section">
             <section class="container">
                 <article class="left-container">
+                    
                     <div class="cart-header">
                         <h2>Таны сагс </h2>
                         <button type="button" class="cart-btn remove-all-btn"> <i class="fas fa-trash"></i>Сагс хоослох</button>
                     </div>
-                    <div class="cal-out">
-                        <template id="cart-template">
-                            <style>
-                                .calculate-products{
-                                    display: grid;
-                                    grid-template-columns: 2fr 1fr 1fr;
-                                }
-                                .calculate-products h3{
-                                    color: var(--color-green);
-                                }
-                                .quantity{
-                                    color: var(--color-green);
-                                }
-                            </style>
-                            <div class="calculate-products">
-                                <h3><slot name="title"></slot></h3>
-                                <p class="quantity"><slot name="quantity"></slot></p>
-                                <p><slot name="price"></slot></p>
-                            </div>
-                        </template>
-                        <cart-template>
-                            <span></span>
-                        </cart-template>
-                        <div class="total"><p>7400</p></div>
+
                     <div class="cart-container">
                         <cart-products></cart-products>
                     </div>
                 </article>
-
                 <article class="right-container">
                     <div class="cart-header">
                         <h2>Төлбөрийн мэдээлэл</h2>
                     </div>
+
                     <div class="cart-info">
                         <div>
                             <h4>Бүтээгдэхүүн</h4>
                         </div>
                         <div class="cal-out">
-                            <!-- <template id="cart-template">
-                                <style>
-                                    .calculate-products{
-                                        display: grid;
-                                        grid-template-columns: 2fr 1fr 1fr;
-                                    }
-                                    .calculate-products h3{
-                                        color: var(--color-green);
-                                    }
-                                    .quantity{
-                                        color: var(--color-green);
-                                    }
-                                    .name p{
-                                        font-size: 50px;
-                                    }
-                                    h3{
-                                        font-size: 30px;
-                                    }
-                                    .calculate-products{
-                                        display: grid;
-                                        grid-template-columns: 40% 10% 40%;
-                                    }
-                                </style>
-                                <div class="calculate-products">
-                                    <h3 class="name"><slot name="title"></slot></h3>
-                                    <p class="quantity"><slot name="quantity"></slot></p>
-                                    <p><slot name="price"></slot></p>
-                                </div>
-                            </template> -->
                             <cart-template>
                                 <h3 slot="title">Product Name</h3>
                                 <p slot="quantity">10</p>
@@ -159,10 +105,10 @@
                             <div class="total"><p>7400</p></div>
                         </div>
                     </div>
+
                     <div>
                         <button type="button" class="cart-btn">Худалдан авах</button>
                     </div>
-
                 </article>
             </section>
         </section>
