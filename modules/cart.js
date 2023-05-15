@@ -1,4 +1,3 @@
-import html from './utility.js'
 export default class Cart extends HTMLElement {
     constructor(cart){
         super();
@@ -8,7 +7,6 @@ export default class Cart extends HTMLElement {
         }else{
             this.cart = [];
         }
-        console.log(this.cart);
     }
     connectedCallback() {
         this.render(this.cart);
@@ -111,10 +109,10 @@ export default class Cart extends HTMLElement {
             font-size: 0.8rem;
             color: #0D4433;
         }
-        .cart-info h4{
+        h4{
             margin: 0px;
             padding-bottom: 10px;
-            color: #0D4433;
+            color: var(--color-green);
         }
         .product-price{
             color: #0D4433;
@@ -153,15 +151,21 @@ export default class Cart extends HTMLElement {
                 <div class="right">
                     <h4>${product.name}</h4>
                     <div class="detail">
-                        <form action="add-to-cart.php" method="post" class="form">
+                        <form action="" method="submit">
                             <input type="number" id="product-quantity1" name="product-quantity" min="1" max="10" value="${product.num}">
-                            <span class="price">Үнэ</span><label class="price-text" for="product-quantity1">${product.price}</label>
+                            <span class="price">Үнэ</span><label class="price-text" for="product-quantity1">${parseInt(product.num) * parseInt(product.price)}</label>
                         </form>
                         <button class="remove" id="${product.id}">Устгах</button>
                     </div>
                 </div> 
             </div>`).join('')}
         `;
+        const inputElement = document.querySelectorAll("#product-quantity1");
+        inputElement.forEach(product => product.addEventListener("change", function() {
+            let value = inputElement.value;
+            console.log("Value changed:", value);
+        }));
+
         this.calculateTotalAmount(cart);
         const removeButtons = document.querySelectorAll('.remove');
         removeButtons.forEach(button => button.addEventListener('click', (event) => {
@@ -179,7 +183,11 @@ export default class Cart extends HTMLElement {
                 child.remove();
             });
             this.calculateTotalAmount([]);
-        })
+        });
+    }
+    changeQuantity(){
+        const inputElement = document.querySelectorAll("#product-quantity1");
+        console.log(inputElement);
     }
     calculateTotalAmount(cart){
         const totalAmountContainer = document.querySelector('.cal-out');
@@ -197,7 +205,7 @@ export default class Cart extends HTMLElement {
         <cart-template>
             <h3 slot="title">${product.name}</h3>
             <p slot="quantity">${product.num}</p>
-            <p slot="price">${product.price}</p>
+            <p slot="price">${parseInt(product.num) * parseInt(product.price)}</p>
         </cart-template>`).join('')}
         `);
     }
