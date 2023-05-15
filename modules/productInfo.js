@@ -10,21 +10,26 @@ export default class ProductInfo extends HTMLElement {
       }else{
           this.cartProducts = [];
       }
-      const currentUrl = window.location.href;
-      this.checkUrl(currentUrl);
+      this.currentUrl = window.location.href;
     }
     
     async connectedCallback() {
       const products = await this.fetchProducts();
       this._products = products;
       this.render(products);
+      this.checkUrl(this.currentUrl);
     }
   
     checkUrl(currentUrl){
       const parts = currentUrl.split("/"); 
-      console.log(parts);
-      if(this.part[4]){
-        this.category = parts[4];
+      if(parts[3]){
+        const cat = parts[3].split("?");
+        if(cat[1]){
+          const cat2 = cat[1].split("=");
+          this.onCategoryChanged(this.category, cat2[1]);
+          this.category = toString(cat2[1]);
+          console.log(this.category);
+        }
       }
     }
     onCategoryChanged(oldValue, newValue) {
@@ -51,12 +56,16 @@ export default class ProductInfo extends HTMLElement {
         return products;
       }
   
-      return products.filter(product => product.category === category);
+      return products.filter(product => product.category == category);
     }
   
     render(products) {
         this._shadowRoot.innerHTML = `
         <style>
+            :root{
+              --color-dark: #2E2F2E;
+              --color-dark-mode-background: #272625;
+            }
             .product-list{
               display: grid;
               grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
