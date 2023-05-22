@@ -1,0 +1,29 @@
+{
+  "name": "tlj-web-num",
+  "version": "1.0.0",
+  "description": "Tous les Jours website project",
+  "main": "modules/api.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon modules/api.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oonoo19/TLJ-Web-NUM.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oonoo19/TLJ-Web-NUM/issues"
+  },
+  "homepage": "https://github.com/Oonoo19/TLJ-Web-NUM#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "pg": "^8.11.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.3"
+  }
+}
