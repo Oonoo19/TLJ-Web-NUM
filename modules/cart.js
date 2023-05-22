@@ -40,12 +40,15 @@ export default class Cart extends HTMLElement {
             justify-content: center;
         }
         .cart-btn:nth-child(2){
+            display: flex;
             width: 120px;
             height: 25px;
-            border-color: var(--color-white);
-            background-color: var(--color-white);
+            border-color: var(--color-green);
+            background-color: var(--color-green);
             cursor: pointer;
-            color: var(--color-green);
+            color: var(--color-white);
+            justify-content: space-around;
+            align-items: center;
         }
         .cart-btn:nth-child(1){
             min-width: 100%;
