@@ -82,7 +82,7 @@ export default class Product extends HTMLElement {
             }
             @media (prefers-color-scheme: dark) {
                 .product-box{
-                    background-color: var(--color-dark);
+                    background-color: #dbd8de;
                 }
             }
             </style>
