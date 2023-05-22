@@ -3,28 +3,24 @@ create table Products(
 	name varchar(100),
 	description varchar(200),
 	price int,
-	//category varchar(50),
+	category varchar(50),
 	image varchar(200)
-)
-CREATE TABLE categories (
-  id int ,
-  name nvarchar(255)
-)
-insert into Products values (1,'Whole Corn Bread','Эрдэнэшишээр баялаг крем чийз шанзтай зөөлөн амтлаг талх',3700,'Bread','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/bread1.webp')
+);
+insert into Products values (1,'Whole Corn Bread','Эрдэнэшишээр баялаг крем чийз шанзтай зөөлөн амтлаг талх',3700,'bread','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/bread1.webp')
 ;
-insert into Products values (2,'Onion sausage focaccia','Зөөлхөн жажлууртай Focaccia-г мустард соус, шаржигнуурт сонгиноор бүрж амталсан салахын аргагүй амтат бүтээгдэхүүн',3800,'Bread','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/focaccia.jpeg')
+insert into Products values (2,'Onion sausage focaccia','Зөөлхөн жажлууртай Focaccia-г мустард соус, шаржигнуурт сонгиноор бүрж амталсан салахын аргагүй амтат бүтээгдэхүүн',3800,'bread','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/focaccia.jpeg')
 ;
-insert into Products values (3,'Coffe kaya bread','Кофены тансаг амтыг шингээж, өтгөрүүлсэн костард шанзаар арвижуулж бэлдсэн бүтээгдэхүүн',4500,'Bread','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/coffee_kaya.jpeg')
+insert into Products values (3,'Coffe kaya bread','Кофены тансаг амтыг шингээж, өтгөрүүлсэн костард шанзаар арвижуулж бэлдсэн бүтээгдэхүүн',4500,'bread','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/coffee_kaya.jpeg')
 ;
-insert into Products values (4,'Red bean bun bread','Улаан буурцгийн бурмаар баяжуулсан чихэрлэг зөөлөн амтат талх',3700,'Bread','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/redbean.jpeg')
+insert into Products values (4,'Red bean bun bread','Улаан буурцгийн бурмаар баяжуулсан чихэрлэг зөөлөн амтат талх',3700,'bread','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/redbean.jpeg')
 ;
-insert into Products values (5,'Fresh pearl cake','Цэвэр сүүн кремтэй хөвсгөр зөөлөн цагаан кекстэй жимсний коктейл хавчуургатай гүзээлзгэнэ нэрсээр чимэглэсэн амтат бялуу',55900,'Cake','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/fresh_pearl.jpeg')
+insert into Products values (5,'Fresh pearl cake','Цэвэр сүүн кремтэй хөвсгөр зөөлөн цагаан кекстэй жимсний коктейл хавчуургатай гүзээлзгэнэ нэрсээр чимэглэсэн амтат бялуу',55900,'cake','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/fresh_pearl.jpeg')
 ;
-insert into Products values (6, 'Blueberry love cake','Амтат нэрс жимсний чанамалтай, нэрсний амттай цэвэр маслон кремээр бүрж макароноор чимэглэсэн бялуу',36900,'Cake','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/blueberry_love.jpeg');
-insert into Products values (7, 'Chocolate Chiffon No.3','Шоколадтай хөвсгөр зөөлөн шиффон кекстэй цэвэр сүүн кремээр бүрсэн кексний агууламж ихтэй бялуу',52900,'Cake','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/chocolate_chiffon.jpeg');
-insert into Products values (8, 'Americano','Зөөлөн амтат хар халуун кофе',6500,'Beverage','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/americano.jpeg');
-insert into Products values (9, 'Cafe Latte','Зөөлөн амтат бага зэргийн сүүний хөөстэй сүүтэй халуун кофе',7000,'Beverage','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/cafe_latte.jpeg');
-insert into Products values (10, 'Cafe Mocha','Шоколадны амтат халуун сүүтэй кофе',7500,'Beverage','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/cafe_mocha.jpeg');
+insert into Products values (6, 'Blueberry love cake','Амтат нэрс жимсний чанамалтай, нэрсний амттай цэвэр маслон кремээр бүрж макароноор чимэглэсэн бялуу',36900,'cake','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/blueberry_love.jpeg');
+insert into Products values (7, 'Chocolate Chiffon No.3','Шоколадтай хөвсгөр зөөлөн шиффон кекстэй цэвэр сүүн кремээр бүрсэн кексний агууламж ихтэй бялуу',52900,'cake','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/chocolate_chiffon.jpeg');
+insert into Products values (8, 'Americano','Зөөлөн амтат хар халуун кофе',6500,'beverage','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/americano.jpeg');
+insert into Products values (9, 'Cafe Latte','Зөөлөн амтат бага зэргийн сүүний хөөстэй сүүтэй халуун кофе',7000,'beverage','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/cafe_latte.jpeg');
+insert into Products values (10, 'Cafe Mocha','Шоколадны амтат халуун сүүтэй кофе',7500,'beverage','https://raw.githubusercontent.com/Oonoo19/TLJ-Web-NUM/main/images/cafe_mocha.jpeg');
 
 //alter table products 
 //drop column category
