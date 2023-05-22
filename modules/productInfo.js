@@ -39,13 +39,14 @@ export default class ProductInfo extends HTMLElement {
     }
   
     async fetchProducts() {
-      const response = await fetch('https://api.jsonbin.io/v3/b/644e64d48e4aa6225e93bb07/latest', {
+      const response = await fetch('http://localhost:5002/products', {
         headers: {
           'X-Master-Key': '$2b$10$P81udmXfTImTITJc3YqYMuE7HVJQwgy.EV7Cx87ID0AgvV7B9CZTy'
         }
       });
       const data = await response.json();
-      return data.record;
+      console.log(data);
+      return data.products;
     }
   
     filterProducts(category) {
@@ -113,7 +114,7 @@ export default class ProductInfo extends HTMLElement {
             </ul>
         ${products.map(product => `
           <each-product id="${product.id}" name="${product.name}" description="${product.description}" 
-          image="${product.image}" price="${product.price}" product="${JSON.stringify(product)}"></each-product>
+          price="${product.price}" image="${product.image}" product="${JSON.stringify(product)}"></each-product>
           `).join('')}
         </div>
         `;
